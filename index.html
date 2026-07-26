@@ -1,564 +1,1543 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LazyWorkaholic - AI-решения под ключ: сайты, боты, автоматизация</title>
-<meta name="description" content="LazyWorkaholic - AI-решения под ключ для небольших компаний и экспертов. Сайты с AI, Telegram-боты, автоматизация бизнес-процессов. Сбор требований и QA-тестирование в каждом проекте.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://lazyworkaholic.com">
-<meta property="og:title" content="LazyWorkaholic - AI-решения под ключ">
-<meta property="og:description" content="Сайты, AI-боты и автоматизация бизнеса. Полный цикл: от требований до тестирования и запуска.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://lazyworkaholic.com">
-<meta property="og:image" content="https://lazyworkaholic.com/lt3-P.png">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%233f8f6f'/><text x='16' y='23' text-anchor='middle' font-size='16' font-weight='bold' fill='white'>LW</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-:root{
-  --paper: #f4f7f4;
-  --paper-alt: #e8ede8;
-  --ink: #1b2420;
-  --ink-soft: #3a4a40;
-  --ink-mute: #5c6b60;
-  --line: #d6e0d6;
-  --line-strong: #bcc9bc;
-  --pass: #2a6b50;
-  --pass-bg: #e6f0ea;
-  --pending: #9c4f20;
-  --pending-bg: #f5ede4;
-  --accent: #3f8f6f;
-  --max: 1200px;
-}
-*{ box-sizing:border-box; margin:0; padding:0; }
-html{ scroll-behavior:smooth; scroll-padding-top:64px; }
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:'IBM Plex Sans', sans-serif;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-h1,h2,h3{ font-family:'Space Grotesk', sans-serif; font-weight:600; letter-spacing:-0.01em; }
-.mono{ font-family:'IBM Plex Mono', monospace; }
-a{ color:inherit; }
-.wrap{ max-width:var(--max); margin:0 auto; padding:0 15px; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Алена Лазарева - Психолог</title>
+  <meta name="description" content="Алена Лазарева — практикующий психолог в Санкт-Петербурге. Гештальт-терапия, КПТ, телесно-ориентированная терапия. Индивидуальные и парные консультации, супервизия.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Алена Лазарева — Психолог">
+  <meta property="og:description" content="Практикующий психолог в Санкт-Петербурге. Индивидуальные и парные консультации, супервизия.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alenalazareva.netlify.app">
+  <meta property="og:image" content="https://alenalazareva.netlify.app/photo.jpg">
+  <meta property="og:locale" content="ru_RU">
+  <link rel="canonical" href="https://alenalazareva.netlify.app">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-.tag{
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.06em;
-  text-transform:uppercase; color:var(--pass);
-  background:var(--pass-bg); border:1px solid var(--line);
-  padding:5px 11px; border-radius:3px;
-}
-.tag.gold{ color:var(--pending); background:var(--pending-bg); border-color:#e6d6ac; }
+    :root {
+      --bg-primary: #14110D;
+      --bg-secondary: #191510;
+      --bg-card: rgba(255,255,255,0.04);
+      --bg-card-hover: rgba(255,255,255,0.08);
+      --border-card: rgba(255,255,255,0.06);
+      --text-primary: #F0EDE8;
+      --text-secondary: #A09DA7;
+      --accent: #C9A96E;
+      --accent-glow: rgba(201,169,110,0.25);
+      --accent-light: rgba(201,169,110,0.1);
+      --accent-gradient: linear-gradient(135deg, #C9A96E, #D4B87A, #C9A96E);
+      --radius: 20px;
+      --radius-sm: 12px;
+      --transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-header{
-  position:sticky; top:0; z-index:50;
-  background:rgba(255,255,255,0.92); backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 28px; max-width:var(--max); margin:0 auto; }
-.logo{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:17px; }
-.logo span{ color:var(--pass); }
-.nav-links{ display:flex; gap:28px; font-size:14px; color:var(--ink-soft); }
-.nav-links a{ text-decoration:none; transition:color .15s; }
-.nav-links a:hover{ color:var(--ink); }
-.btn{
-  font-family:'IBM Plex Sans', sans-serif; font-weight:600; font-size:14px;
-  border:none; cursor:pointer; padding:11px 20px; border-radius:8px;
-  transition:transform .12s ease, background .15s ease, box-shadow .15s ease;
-  text-decoration:none; display:inline-block;
-}
-.btn:active{ transform:scale(0.97); }
-.btn-primary{ background:linear-gradient(180deg,#2a3630 0%,var(--ink) 100%); color:#fff; box-shadow:0 4px 12px rgba(27,36,32,0.25), inset 0 1px 0 rgba(255,255,255,0.08); }
-.btn-primary:hover{ background:linear-gradient(180deg,#1b2420 0%,#0d1210 100%); box-shadow:0 6px 16px rgba(27,36,32,0.35), inset 0 1px 0 rgba(255,255,255,0.04); }
-.btn-ghost{ background:transparent; color:var(--ink); border:1px solid var(--line-strong); }
-.btn-ghost:hover{ border-color:var(--ink); }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: 'Montserrat', -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* hero */
-.hero{ padding:80px 0 0; border-bottom:1px solid var(--line); position:relative; overflow:hidden;
-  background:var(--paper-alt);
-}
-.hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns:0.94fr 1.06fr; gap:24px; align-items:start; padding-bottom:44px; }
-.hero h1{ font-size:52px; line-height:1.06; margin:18px 0 20px; }
-.hero h1 .accent-line{ color:var(--pass); }
-.hero h1 .cursor{ display:inline-block; animation:blink 1.1s step-end infinite; }
-@keyframes blink{ 50%{ opacity:0; } }
-.hero p.lead{ font-size:17px; color:var(--ink-soft); max-width:440px; margin-bottom:28px; }
-.hero-cta{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-bottom:36px; }
-.link-arrow{ font-size:14px; font-weight:600; color:var(--ink); text-decoration:none; display:inline-flex; align-items:center; gap:6px; }
-.link-arrow span{ transition:transform .15s; }
-.link-arrow:hover span{ transform:translateX(3px); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
 
-.hero-checklist{ max-width:420px; padding:18px 20px 14px; transform:scaleY(0.9); transform-origin:top; }
-.hero-checklist .cl-item{ font-size:13.5px; padding:8px 0; }
-.hero-checklist .cl-item.pending span:not(.cl-time){ color:var(--ink-mute); }
-.hero-checklist .cl-more{
-  display:flex; align-items:center; gap:6px; margin-top:10px;
-  font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--pass);
-  text-decoration:none;
-}
-.hero-checklist .cl-more:hover{ text-decoration:underline; }
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(20,17,13,0.8);
+      backdrop-filter: blur(24px) saturate(1.2);
+      border-bottom: 1px solid rgba(201,169,110,0.3);
+      transition: transform 0.4s ease;
+    }
+    nav .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 72px;
+    }
+    .nav-logo {
+      font-size: 1.15rem; font-weight: 600;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-secondary); font-size: 0.85rem;
+      padding: 8px 18px; border-radius: 10px; transition: all 0.3s;
+      font-weight: 500; letter-spacing: 0.01em;
+    }
+    .nav-links a:hover {
+      color: var(--text-primary);
+      background: var(--bg-card);
+    }
+    .nav-cta {
+      background: var(--accent) !important; color: var(--bg-primary) !important;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: #D4B87A !important; transform: translateY(-1px); }
+    .nav-toggle {
+      display: none; background: none; border: none;
+      font-size: 1.6rem; cursor: pointer; color: var(--text-primary);
+      width: 44px; height: 44px; align-items: center; justify-content: center;
+    }
 
-.hero-art{ position:relative; height:560px; }
-.hero-figure{
-  position:absolute; left:38%; bottom:-50px; transform:translateX(calc(-50% + 55px)) perspective(800px) rotateX(1.5deg);
-  width:140%; max-width:900px;
-  z-index:4; display:block;
-}
-.float-card{
-  position:absolute; z-index:3; background:linear-gradient(180deg,#1b2420 0%,#141a17 100%); color:var(--pass);
-  border-radius:8px; padding:9px 11px; font-family:'IBM Plex Mono', monospace;
-  font-size:10px; line-height:1.75;
-  box-shadow:0 10px 24px -8px rgba(27,36,32,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
-  transform:perspective(600px) rotateX(1deg);
-}
-.float-card .dots{ display:flex; gap:4px; margin-bottom:7px; }
-.float-card .dots span{ width:5px; height:5px; border-radius:50%; background:radial-gradient(circle at 40% 35%, #8aE8B8, #5ABF8A); display:inline-block; box-shadow:0 0 4px rgba(90,191,138,0.5); }
-.float-card.terminal{ top:0%; left:25%; width:190px; }
-.float-card.terminal .muted{ color:#9fb3a8; }
-.float-card.terminal > div:nth-child(2){ color:#5ABF8A; }
-.float-card.terminal > div:nth-child(3){ color:#5ABF8A; }
-.float-tag{
-  position:absolute; z-index:3; top:42%; left:11%; background:linear-gradient(180deg,#1b2420 0%,#141a17 100%); color:#5ABF8A;
-  border-radius:8px; padding:9px 11px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; line-height:1.4;
-  box-shadow:0 10px 24px -8px rgba(27,36,32,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
-  transform:perspective(600px) rotateX(1deg);
-}
-.icon-badge{
-  position:absolute; z-index:3; background:linear-gradient(180deg,#fff 0%,var(--paper) 100%); border-radius:11px;
-  padding:11px 12px; text-align:center; width:90px;
-  box-shadow:0 10px 24px -10px rgba(27,36,32,0.28), 0 2px 4px rgba(27,36,32,0.06), inset 0 -1px 0 rgba(27,36,32,0.04);
-  transform:perspective(600px) rotateX(1deg);
-}
-.icon-badge .ib-icon{ color:var(--pass); margin:0 auto 6px; width:18px; height:18px; }
-.icon-badge span{ font-size:10px; color:var(--ink-soft); font-weight:500; line-height:1.3; display:block; }
-.icon-badge.b-sites{ top:20%; left:11%; }
-.icon-badge.b-bots{ top:2%; right:16%; }
-.icon-badge.b-auto{ top:30%; right:0%; }
-.icon-badge.b-audit{ top:48%; right:1%; }
+    /* Sections */
+    section { padding: 80px 0; position: relative; overflow: hidden; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-light);
+      padding: 6px 18px; border-radius: 40px; margin-bottom: 20px;
+      border: 1px solid rgba(201,169,110,0.15);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 600;
+      margin-bottom: 18px; line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 1.05rem; color: var(--text-secondary);
+      max-width: 560px; line-height: 1.7;
+    }
+    .text-center { text-align: center; }
+    .text-center .section-desc { margin: 0 auto; }
 
-.checklist{
-  background:var(--paper-alt); border:1px solid var(--line);
-  border-radius:8px; padding:22px 22px 18px;
-}
-.checklist-head{
-  display:flex; justify-content:space-between; align-items:center;
-  font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-mute);
-  text-transform:uppercase; letter-spacing:0.06em;
-  padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid var(--line);
-}
-.cl-item{
-  display:flex; align-items:center; gap:12px; padding:10px 0;
-  font-size:14.5px; color:var(--ink-mute);
-  border-bottom:1px dashed var(--line);
-}
-.cl-item:last-child{ border-bottom:none; }
-.cl-box{
-  width:18px; height:18px; flex-shrink:0; border-radius:4px;
-  border:1.5px solid var(--line-strong); position:relative;
-}
-.cl-item.done{ color:var(--ink); }
-.cl-item.done .cl-box{ background:var(--pass); border-color:var(--pass); }
-.cl-item.done .cl-box::after{
-  content:""; position:absolute; left:5px; top:1px; width:5px; height:9px;
-  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg);
-}
-.cl-item .cl-time{ margin-left:auto; font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-mute); }
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 36px; border-radius: 60px;
+      font-weight: 600; font-size: 0.9rem;
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all var(--transition); position: relative;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: var(--bg-primary);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      transform: translateY(-3px);
+    }
 
-/* section shell */
-section{ padding:76px 0; border-bottom:1px solid var(--line); }
-.section-head{ margin-bottom:38px; max-width:560px; }
-.section-head .tag{ margin-bottom:14px; }
-.section-head h2{ font-size:28px; margin-bottom:10px; }
-.section-head p{ color:var(--ink-soft); font-size:15px; }
-.section-head-p{ white-space:nowrap; }
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 72px; position: relative; overflow: hidden;
+      background: url('fon_1.png') center/cover no-repeat;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(20,17,13,0.94) 0%, rgba(20,17,13,0.88) 30%, rgba(20,17,13,0.55) 52%, rgba(20,17,13,0.15) 75%, rgba(20,17,13,0) 92%);
+      z-index: 0;
+    }
+    .hero > .container { position: relative; z-index: 1; }
+    .hero .container {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--bg-card); backdrop-filter: blur(12px);
+      border: 1px solid var(--border-card);
+      padding: 8px 18px 8px 8px; border-radius: 60px;
+      font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 28px;
+    }
+    .hero-badge .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4ADE80; display: inline-block;
+      box-shadow: 0 0 12px rgba(74,222,128,0.4);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem; font-weight: 600; line-height: 1.08;
+      margin-bottom: 24px; letter-spacing: -0.03em;
+    }
+    .hero h1 .accent { background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub {
+      font-size: 1.1rem; color: #F0EDE8;
+      margin-bottom: 40px; line-height: 1.8; max-width: 480px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 40px;
+    }
+    .hero-stat {
+      text-align: left;
+    }
+    .hero-stat .num {
+      font-size: 1.6rem; font-weight: 700; color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .hero-stat .lbl {
+      font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;
+    }
 
-/* services */
-.services-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
-.service-card{
-  background:var(--paper); border:1px solid var(--line); border-radius:8px;
-  padding:26px 22px; transition:border-color .15s, transform .15s;
-}
-.service-card:hover{ border-color:var(--line-strong); transform:translateY(-2px); }
-.service-card .mono{ font-size:11px; color:var(--pass); letter-spacing:0.08em; }
-.service-card h3{ font-size:18px; margin:12px 0 10px; }
-.service-card p{ font-size:14px; color:var(--ink-soft); }
+    /* About */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-image {
+      width: 100%; aspect-ratio: 1;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(201,169,110,0.08), rgba(201,169,110,0.02));
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(201,169,110,0.08);
+      position: relative; overflow: hidden;
+    }
+    .about-image::before {
+      content: ''; position: absolute;
+      width: 200%; height: 200%; top: -50%; left: -50%;
+      background: conic-gradient(from 0deg, transparent, rgba(201,169,110,0.04), transparent, rgba(201,169,110,0.04), transparent);
+      animation: conicSpin 12s linear infinite;
+    }
+    @keyframes conicSpin { to { transform: rotate(360deg); } }
+    .about-image .initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem; letter-spacing: 0.08em;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      position: relative; z-index: 1;
+    }
+    .about-text h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; margin-bottom: 20px; line-height: 1.3;
+    }
+    .about-text p {
+      color: var(--text-secondary); margin-bottom: 18px; font-size: 0.95rem;
+    }
 
-/* why/qa */
-.why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; }
-.why-copy{ align-self:start; }
-.checklist{ align-self:end; margin-bottom:50px; }
-.why-copy p{ color:var(--ink-soft); font-size:15px; margin-bottom:20px; }
-/* cases */
-.case{
-  border:1px solid var(--line); border-radius:8px; margin-bottom:14px; overflow:hidden;
-  background:var(--paper);
-}
-.case-head{
-  display:flex; justify-content:space-between; align-items:center; gap:16px;
-  padding:20px 22px; cursor:pointer; user-select:none;
-}
-.case-head:hover{ background:var(--paper-alt); }
-.case-title{ display:flex; align-items:center; gap:14px; }
-.case-id{ font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-mute); }
-.case-title h3{ font-size:16px; font-weight:600; font-family:'IBM Plex Sans'; }
-.case-sub{ font-size:13px; color:var(--ink-soft); margin-top:3px; }
-.chev{ font-family:'IBM Plex Mono', monospace; color:var(--ink-mute); transition:transform .2s; flex-shrink:0; }
-.case.open .chev{ transform:rotate(180deg); }
-.case-body{ max-height:0; overflow:hidden; transition:max-height .28s ease; }
-.case.open .case-body{ max-height:520px; }
-.case-body-in{ padding:18px 22px 24px; border-top:1px solid var(--line); }
-.cbp{ display:grid; grid-template-columns:1fr 1fr; gap:16px 20px; }
-.cbp .blk{ font-size:13.5px; }
-.cbp .blk .lbl{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--pass); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px; }
-.cbp .blk p{ color:var(--ink-soft); }
+    /* Stats row */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 36px;
+    }
+    .stat-box {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      padding: 22px; border-radius: var(--radius-sm);
+      text-align: center; backdrop-filter: blur(8px);
+      transition: all var(--transition);
+    }
+    .stat-box:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      border-color: rgba(201,169,110,0.15);
+    }
+    .stat-box .num {
+      font-size: 1.8rem; font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .stat-box .lbl { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
 
-/* process */
-.process{ display:grid; grid-template-columns:repeat(5, 1fr); gap:14px; }
-.proc-step{ border:1px solid var(--line); border-radius:8px; padding:16px 14px; }
-.proc-step .tc{ font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-mute); display:block; margin-bottom:10px; }
-.proc-step h4{ font-size:14px; font-weight:600; margin-bottom:4px; }
-.proc-step p{ font-size:12.5px; color:var(--ink-soft); }
-.proc-step.pass{ background:var(--pass-bg); border-color:var(--line); }
-.proc-step.pass .tc{ color:var(--pass); }
+    /* Specializations / Grid cards */
+    .specs-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+    .spec-card {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius); padding: 32px 28px;
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .spec-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0; transition: opacity 0.5s;
+    }
+    .spec-card:hover::before { opacity: 1; }
+    .spec-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-6px);
+      border-color: rgba(201,169,110,0.15);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .spec-card .icon {
+      font-size: 1.8rem; margin-bottom: 16px; display: block;
+    }
+    .spec-card h3 {
+      font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;
+    }
+    .spec-card p {
+      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7;
+    }
 
-/* faq */
-.faq-item{ border-bottom:1px solid var(--line); padding:18px 0; cursor:pointer; }
-.faq-q{ display:flex; justify-content:space-between; align-items:center; font-size:15px; font-weight:500; }
-.faq-a{ max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:14px; color:var(--ink-soft); }
-.faq-item.open .faq-a{ max-height:200px; margin-top:10px; }
-.faq-item .chev{ font-size:13px; }
-.faq-item.open .chev{ transform:rotate(180deg); }
+    /* Methods */
+    .methods-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px;
+      align-items: start;
+    }
+    .methods-left {
+      text-align: left;
+      padding-top: 50px;
+    }
+    .methods-left h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; margin-bottom: 16px; line-height: 1.3; color: #F0EDE8;
+    }
+    .methods-left p {
+      font-size: 0.92rem; color: #F0EDE8; line-height: 1.7;
+    }
+    .methods-list {
+      display: flex; flex-direction: column; text-align: left;
+    }
+    .methods-quote-text { white-space: nowrap; }
+    #specializations .section-label,
+    #specializations .section-desc,
+    #specializations .specs-bottom-text,
+    #specializations .specs-orbit-text small,
+    #specializations .specs-orbit-text span,
+    #specializations .spec-card,
+    #specializations .spec-card h3,
+    #specializations .spec-card p { font-family: 'Montserrat', sans-serif !important; }
+    #specializations .section-desc { color: #F0EDE8 !important; }
+    #specializations .specs-bottom-text { color: #F0EDE8 !important; }
+    #specializations .specs-orbit-text small { color: #e7c18c !important; }
+    #specializations .specs-orbit-text span { color: #F0EDE8; }
+    #specializations .spec-card h3 { color: #F0EDE8 !important; }
+    #specializations .spec-card p { color: #e7c18c !important; }
 
-/* contact */
-section.contact{ text-align:center; border-bottom:none; padding:76px 0 60px; }
-.contact h2{ font-size:30px; margin-bottom:12px; }
-.contact p{ color:var(--ink-soft); margin-bottom:26px; }
-.contact-btns{ display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-footer{ padding:26px 0 40px; text-align:center; font-size:12.5px; color:var(--ink-mute); font-family:'IBM Plex Mono', monospace; }
+    h1, h2, h3, h4 { color: #c2854d; font-family: 'Cormorant Garamond', serif; }
+    .section-desc, .method-block p, .pricing-card .desc, .edu-item .info p, .testimonial-card .text, .stat-box .lbl, .hero-stat .lbl, .about-text p, .contact-item .detail, .contact-info > p, .carousel-card p { color: #e7c18c !important; }
+    .method-block {
+      padding: 20px 0; border-bottom: 1px solid rgba(201,169,110,0.3);
+      display: flex; align-items: flex-start; gap: 16px;
+    }
+    .method-block:last-child { border-bottom: none; }
+    .method-block h3 {
+      font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; color: #F0EDE8;
+    }
+    .method-block p {
+      font-size: 0.85rem; color: #F0EDE8; line-height: 1.7;
+    }
 
-@media (max-width: 1000px){
-  .icon-badge.b-sites{ display:none; }
-}
+    /* Pricing */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .pricing-card {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius); padding: 36px 28px;
+      text-align: center; backdrop-filter: blur(8px);
+      transition: all var(--transition);
+      position: relative;
+      display: flex; flex-direction: column;
+    }
+    .pricing-card .btn { margin-top: auto; }
+    .pricing-card:hover .btn {
+      transform: translateY(-3px) scale(1.02);
+    }
+    .pricing-card:hover .btn-outline {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .pricing-card.featured {
+      border-color: rgba(201,169,110,0.3);
+      background: rgba(201,169,110,0.04);
+    }
+    .pricing-card.featured .badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--accent-gradient); color: var(--bg-primary);
+      padding: 5px 20px; border-radius: 40px; font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .pricing-card .title { font-weight: 600; font-size: 1.1rem; margin-bottom: 6px; }
+    .pricing-card .desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 20px; flex-grow: 1; }
+    .pricing-card .price {
+      font-size: 2.6rem; font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 2px;
+    }
+    .pricing-card .duration { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 24px; }
 
-@media (max-width: 860px){
-  .hero-grid{ grid-template-columns:1fr; }
-  .hero{ padding:60px 0 0; }
-  .hero h1{ font-size:36px; }
-  .hero-art,
-  .hero-cta .link-arrow{ display:none; }
-  .trust-strip{ grid-template-columns:1fr 1fr; max-width:none; }
-  .trust-item:nth-child(2){ border-right:none; }
-  .trust-item{ border-bottom:1px solid var(--accent); }
-  .hero-checklist{ max-width:none; }
-  section{ padding:56px 0; }
-  .section-head{ margin-bottom:28px; }
-  .section-head h2{ font-size:24px; }
-  .section-head p{ white-space:normal; }
-  .section-head-p{ white-space:normal; }
-  .services-grid{ grid-template-columns:repeat(2, 1fr); }
-  .why-grid{ grid-template-columns:1fr; }
-  .why-copy h2{ font-size:24px !important; }
-  .cbp{ display:flex; flex-direction:column; }
-  .cbp .blk:nth-child(1){ order:1; }
-  .cbp .blk:nth-child(2){ order:3; }
-  .cbp .blk:nth-child(3){ order:2; }
-  .cbp .blk:nth-child(4){ order:4; }
-  .process{ grid-template-columns:repeat(2, 1fr); }
-  .nav-links{ display:none; }
-  .contact h2{ font-size:26px; }
-}
-@media (max-width: 520px){
-  .hero{ padding:44px 0 0; }
-  .hero h1{ font-size:28px; }
-  .hero p.lead{ font-size:15px; }
-  .hero-cta{ flex-direction:column; align-items:stretch; }
-  .hero-cta .btn{ text-align:center; }
-  .services-grid{ grid-template-columns:1fr; }
-  .process{ grid-template-columns:1fr; }
-  section{ padding:44px 0; }
-  .section-head h2{ font-size:22px; }
-  .why-copy h2{ font-size:22px !important; }
-  .contact h2{ font-size:22px; }
-  .wrap{ padding:0 12px; }
-}
-@media (max-width: 400px){
-  .hero h1{ font-size:24px; }
-  .section-head h2{ font-size:20px; }
-  .why-copy h2{ font-size:20px !important; }
-}
-</style>
+    /* Education timeline */
+    .edu-list { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
+    .edu-item {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm); padding: 24px 28px;
+      display: flex; gap: 24px; align-items: flex-start;
+      transition: all var(--transition);
+    }
+    .edu-item:hover {
+      background: var(--bg-card-hover);
+      transform: translateX(6px);
+      border-color: rgba(201,169,110,0.12);
+    }
+    .edu-item .year {
+      font-weight: 700; color: var(--accent);
+      white-space: nowrap; min-width: 56px; font-size: 1rem;
+    }
+    .edu-item .info h4 { font-size: 1rem; margin-bottom: 4px; font-weight: 500; }
+    .edu-item .info p { font-size: 0.82rem; color: var(--text-secondary); }
+
+    /* Trainings */
+    .carousel-container {
+      margin-top: 48px;
+    }
+    .carousel {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .carousel-viewport {
+      overflow: hidden;
+      flex: 1;
+      padding: 20px 0;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94);
+      will-change: transform;
+    }
+    .carousel-card {
+      flex: 0 0 300px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+      transition: opacity 0.4s, transform 0.4s;
+      user-select: none;
+    }
+    .carousel-card.active {
+      opacity: 1;
+      transform: scale(1);
+      border-color: rgba(201,169,110,0.2);
+    }
+    .carousel-card:not(.active) {
+      opacity: 0.66;
+      transform: scale(0.92);
+    }
+    .carousel-card .emoji { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+    .carousel-card h4 { font-size: 1rem; margin-bottom: 6px; color: #F0EDE8 !important; }
+    .carousel-card h3 { font-size: 1rem; margin-bottom: 6px; color: #F0EDE8 !important; }
+    .edu-item .info h3 { color: #F0EDE8 !important; }
+    .carousel-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
+    .carousel-arrow {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border-card);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      opacity: 0.4;
+      line-height: 1;
+    }
+    .carousel-arrow:hover {
+      opacity: 1;
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+    .carousel-arrow:active {
+      transform: scale(0.92);
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius); padding: 32px 28px;
+      backdrop-filter: blur(8px);
+      transition: all var(--transition);
+      position: relative;
+    }
+    .testimonial-card:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      border-color: rgba(201,169,110,0.12);
+    }
+    .testimonial-card::before {
+      content: '\201C'; font-family: 'Playfair Display', serif;
+      font-size: 4rem; 
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      position: absolute; top: 12px; left: 24px; line-height: 1; opacity: 0.4;
+    }
+    .testimonial-card .text {
+      font-size: 0.92rem; color: var(--text-secondary);
+      margin-bottom: 16px; font-style: italic; line-height: 1.7;
+      padding-top: 24px;
+    }
+    .testimonial-card .author {
+      font-weight: 600; font-size: 0.85rem; color: var(--accent);
+    }
+    .testimonial-card .source { font-size: 0.72rem; color: var(--text-secondary); }
+
+    /* Contact */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: start; margin-top: 48px;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; margin-bottom: 16px;
+    }
+    .contact-info > p { color: var(--text-secondary); margin-bottom: 28px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 18px;
+    }
+    .contact-item .icon-box {
+      width: 48px; height: 48px;
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-item .detail { font-size: 0.95rem; }
+    .contact-item .detail small { display: block; color: var(--text-secondary); font-size: 0.8rem; margin-top: 2px; }
+    .contact-socials {
+      display: flex; gap: 12px; margin-top: 28px;
+    }
+    .contact-socials a {
+      width: 52px; height: 52px; border-radius: var(--radius-sm);
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; font-size: 1.3rem;
+      transition: all var(--transition);
+    }
+    .contact-socials a:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+    .contact-form {
+      background: var(--bg-card); border: 1px solid var(--border-card);
+      border-radius: var(--radius); padding: 36px 32px;
+      backdrop-filter: blur(12px);
+    }
+    .contact-form h4 { font-size: 1.2rem; margin-bottom: 24px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group input,
+    .form-group textarea {
+      width: 100%; padding: 16px 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      font-family: inherit; font-size: 0.92rem; color: var(--text-primary);
+      transition: all 0.3s; outline: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--text-secondary); }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      background: rgba(201,169,110,0.04);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .form-group textarea { height: 120px; resize: vertical; }
+
+    @media (min-width: 969px) {
+      #specializations { background: url('fon_zapros.png') top right/cover no-repeat; }
+      #specializations .section-title { font-size: 1.8rem; }
+      .specs-layout { display: flex; flex-direction: column; align-items: flex-start; gap: 32px; position: relative; }
+      .specs-image { position: relative; width: 280px; height: 280px; margin-left: calc(50% + 150px); margin-top: -42px; overflow: visible; transform: scale(1.15); transform-origin: center top; }
+      .specs-image .specs-image-outer { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+      .specs-image .specs-image-inner {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 200px; height: 200px; border-radius: 50%; overflow: hidden;
+        background: url('pic/zapros/krug.png') center/cover no-repeat;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+      }
+      .specs-image .specs-image-inner img { width: 63px; height: 63px; border-radius: 50%; object-fit: cover; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; margin-bottom: 20px; }
+      .specs-image .specs-image-inner span { font-size: 0.75rem; color: var(--text-primary); margin-top: 6px; font-weight: 600; }
+      .specs-orbit-item {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: rotate(var(--angle)) translateY(-180px) rotate(calc(-1 * var(--angle)));
+        margin-left: -28px; margin-top: -28px;
+        display: flex; align-items: center;
+      }
+      .specs-orbit-item.right { flex-direction: row; margin-left: -28px; }
+      .specs-orbit-item.left { flex-direction: row-reverse; margin-left: -28px; }
+      .specs-orbit-item img { width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+      .specs-orbit-item span { font-size: 0.65rem; color: var(--text-primary); margin-top: 0; font-weight: 600; line-height: 1.3; }
+      .specs-orbit-item small { font-size: 0.55rem; color: var(--text-secondary); line-height: 1.3; display: block; margin-top: 2px; }
+      .specs-orbit-text { display: flex; flex-direction: column; align-items: flex-start; }
+      .specs-orbit-text span { white-space: nowrap; }
+      .specs-orbit-text small { max-width: none; }
+      .specs-bottom-text {
+        display: flex; align-items: center; gap: 12px;
+        font-size: 0.75rem; color: var(--text-secondary);
+        line-height: 1.5; text-align: left;
+        max-width: 400px; margin-top: 10px;
+        padding: 16px 20px;
+        border: 1px solid var(--accent);
+        border-radius: var(--radius);
+      }
+      .specs-orbit-item.right span { margin-left: 0; margin-top: 0; }
+      .specs-orbit-item.left span { margin-right: 0; margin-top: 0; }
+      .specs-orbit-item.right .specs-orbit-text { padding-left: 6px; }
+      .specs-orbit-item.left .specs-orbit-text { padding-right: 6px; }
+      .specs-grid { display: none; }
+      #methods { background: url('pic/metods/fon_metods.png') bottom left/cover no-repeat; }
+      #trainings { background: url('pic/groups/fon_gr.png') center/cover no-repeat; }
+      #methods::before, #trainings::before {
+        content: ''; position: absolute; inset: 0;
+        background: rgba(20,17,13,0.72); backdrop-filter: blur(4px); z-index: 0;
+      }
+      #methods > .container, #trainings > .container { position: relative; z-index: 1; }
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(201,169,110,0.3);
+      padding: 40px 0; text-align: center;
+      font-size: 0.82rem; color: var(--text-secondary);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* Scroll-triggered animation */
+    .reveal {
+      opacity: 0; transform: translateY(60px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1; transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Glow line separator */
+    .divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 0 auto 24px; border-radius: 2px;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.6); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: var(--bg-secondary); border: 1px solid var(--border-card);
+      border-radius: var(--radius); padding: 40px 36px;
+      max-width: 440px; width: 100%; position: relative;
+      animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(20px) scale(0.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; color: var(--text-secondary);
+      font-size: 1.5rem; cursor: pointer; width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: all 0.3s;
+    }
+    .modal-close:hover { color: var(--accent); background: var(--bg-card); }
+    .modal h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem;
+      text-align: center; margin-bottom: 28px;
+    }
+
+    /* Responsive */
+    @media (max-width: 968px) {
+      .hero .container { grid-template-columns: 1fr; text-align: center; }
+      .hero .container > div { max-width: none; margin: 0 auto; }
+      .hero-badge { justify-content: center; }
+      .hero-sub { margin: 0 auto 40px; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { justify-content: center; }
+      .hero-stat { text-align: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 2.2rem; }
+      .container { padding: 0 20px; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; position: absolute; top: 72px; right: 0; left: auto;
+        background: rgba(20,17,13,0.96); flex-direction: column; padding: 16px;
+        border-bottom: 1px solid rgba(201,169,110,0.3);
+        backdrop-filter: blur(24px); width: max-content;
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: flex; }
+      .nav-links .nav-cta { display: none !important; }
+      section { padding: 64px 0; }
+      .hero { min-height: 100svh; background: url('fon_mob.png') center/cover no-repeat; }
+      .hero::before {
+        content: ''; position: absolute; inset: 0;
+        background: rgba(20,17,13,0.62); z-index: 0;
+      }
+      .hero > .container { position: relative; z-index: 1; }
+      .hero h1 { font-size: 2.4rem; letter-spacing: -0.02em; }
+      .hero-sub { font-size: 0.95rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
+      .hero-stats { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .section-label { font-size: 0.6rem; padding: 5px 14px; }
+      .section-title { font-size: 1.7rem; }
+      .section-desc { font-size: 0.9rem; }
+      .section-desc br { display: none; }
+      .about-text h3 { font-size: 1.4rem; }
+      .about-text p { font-size: 0.88rem; }
+      .specs-image { display: none; }
+      #specializations { background: url('pic/zapros/fon_zapros_mob.png') center/cover no-repeat; }
+      .specs-bottom-text { max-width: none; margin-top: 24px; margin-left: auto; margin-right: auto; font-size: 0.85rem; justify-content: center; padding: 16px 20px; border: 1px solid var(--accent); border-radius: var(--radius); display: flex; align-items: center; gap: 12px; }
+      .specs-grid { grid-template-columns: 1fr; gap: 14px; }
+      .spec-card { padding: 24px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+      .spec-card img, .spec-card .icon { margin-bottom: 0; }
+      .spec-card h3 { margin-bottom: 0; }
+      .spec-card p { flex-basis: 100%; }
+      .methods-layout { grid-template-columns: 1fr; gap: 32px; }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .pricing-card { padding: 28px 20px; }
+      .pricing-card .price { font-size: 2rem; }
+      .edu-item { flex-direction: column; gap: 6px; padding: 20px; }
+      .edu-item .year { min-width: auto; font-size: 0.9rem; }
+      .edu-item .info p { font-size: 0.78rem; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat-box { padding: 14px 10px; }
+      .stat-box .num { font-size: 1.2rem; }
+      .stat-box .lbl { font-size: 0.7rem; }
+      .carousel-card { flex: 0 0 260px; }
+      .carousel { gap: 8px; }
+      .carousel-arrow { width: 36px; height: 36px; font-size: 1.3rem; opacity: 0.6; }
+      .contact-socials { justify-content: center; gap: 12px; }
+      .contact-socials a { width: 48px !important; height: 48px !important; font-size: 1.2rem; }
+      .contact-info { text-align: center; }
+      .contact-info > div { align-items: center; }
+      footer { font-size: 0.75rem; padding: 32px 0; }
+      footer a { font-size: 0.75rem; }
+      .methods-quote-text { white-space: normal !important; font-size: 0.85rem; padding: 14px 20px; max-width: 100% !important; width: 100% !important; }
+      #methods, #trainings { background: center/cover no-repeat; position: relative; }
+      #methods::before, #trainings::before {
+        content: ''; position: absolute; inset: 0;
+        background: rgba(20,17,13,0.72); backdrop-filter: blur(4px); z-index: 0;
+      }
+      #methods > .container, #trainings > .container { position: relative; z-index: 1; }
+      #methods { background-image: url('pic/metods/fon_metods_mob.png'); }
+      #trainings { background-image: url('pic/groups/fon_group_mob.png'); }
+    }
+    @media (max-width: 380px) {
+      .container { padding: 0 16px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-badge { font-size: 0.7rem; padding: 6px 14px 6px 6px; }
+      .hero-stat .num { font-size: 1.3rem; }
+      .hero-stat .lbl { font-size: 0.72rem; }
+      .hero-actions .btn { padding: 14px 28px; font-size: 0.85rem; }
+      .section { padding: 56px 0; }
+      .section-title { font-size: 1.5rem; }
+      .methods-layout { grid-template-columns: 1fr; gap: 20px; }
+      .pricing-grid { gap: 16px; }
+      .pricing-card .price { font-size: 1.8rem; }
+      .pricing-card .btn { padding: 12px 20px; font-size: 0.82rem; }
+      .carousel-card { flex: 0 0 230px; padding: 20px 16px; }
+      .methods-quote-text { white-space: normal !important; font-size: 0.85rem; padding: 14px 20px; max-width: 100% !important; width: 100% !important; }
+      #methods { background: url('pic/metods/fon_metods_mob.png') center/cover no-repeat; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Алена Лазарева",
+    "jobTitle": "Практикующий психолог",
+    "description": "Гештальт-терапия, КПТ, телесно-ориентированная терапия. Индивидуальные и парные консультации.",
+    "url": "https://alenalazareva.netlify.app",
+    "image": "https://alenalazareva.netlify.app/photo.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Санкт-Петербург",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
 </head>
 <body>
 
-<header>
-  <div class="nav">
-    <div class="logo">Lazy<span>Workaholic</span></div>
-    <div class="nav-links">
-      <a href="#services">Услуги</a>
-      <a href="#why">Почему я</a>
-      <a href="#process">Процесс</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#faq">FAQ</a>
-    </div>
-    <a href="https://t.me/lazyworkaholic" target="_blank" class="btn btn-primary">Связаться</a>
+<!-- Navigation -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-logo">Алена Лазарева</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#methods">Методы</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#contact">Контакты</a></li>
+      <li><a href="#contact" class="nav-cta" id="navBookBtn">Записаться</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="tag">&gt; AI-решения под ключ</span>
-      <h1>Ленивый<br><span class="accent-line">трудоголик<span class="cursor">_</span></span></h1>
-      <p class="lead">Если задачу приходится делать каждый день — скорее всего, её можно автоматизировать</p>
-      <div class="hero-cta">
-        <a href="https://t.me/lazyworkaholic" target="_blank" class="btn btn-primary">&gt; Обсудить проект</a>
-        <a href="#cases" class="link-arrow">Смотреть кейсы <span>→</span></a>
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="reveal visible">
+      <h1><span style="color:var(--text-primary);">Алена</span> <span class="accent">Лазарева</span></h1>
+      <p class="hero-sub">
+        Помогаю найти внутреннюю опору. Работаю с тревогой, отношениями, 
+        самооценкой и жизненными кризисами. Очно в Санкт-Петербурге и онлайн.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary" id="heroBookBtn">Записаться на сессию</a>
+        <a href="#about" class="btn btn-outline">Подробнее</a>
       </div>
-      <div class="checklist hero-checklist">
-        <div class="checklist-head"><span>BENEFITS.md</span><span>на каждом проекте</span></div>
-        <div class="cl-item done"><div class="cl-box"></div>Не теряете клиента из-за долгого ответа</div>
-        <div class="cl-item done"><div class="cl-box"></div>Знаете, за что платите - без сюрпризов в процессе</div>
-        <div class="cl-item done"><div class="cl-box"></div>Работает, даже когда вы не вникаете в детали</div>
-        <a href="#why" class="cl-more">&gt; как это устроено</a>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">6+</div>
+          <div class="lbl">лет практики</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">500+</div>
+          <div class="lbl">консультаций</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">16+</div>
+          <div class="lbl">курсов</div>
+        </div>
       </div>
-    </div>
-
-    <div class="hero-art">
-
-      <div class="float-card terminal">
-        <div class="dots"><span></span><span></span><span></span></div>
-        <div>&gt; меньше рутины у команды</div>
-        <div>&gt; процессы работают сами</div>
-        <div class="muted">&gt; результат: время свободно</div>
-      </div>
-
-      <div class="icon-badge b-sites">
-        <span class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"/></svg></span>
-        <span>Сайты</span>
-      </div>
-      <div class="icon-badge b-bots">
-        <span class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M9 4h6"/><circle cx="9" cy="14" r="1.3" fill="currentColor" stroke="none"/><circle cx="15" cy="14" r="1.3" fill="currentColor" stroke="none"/></svg></span>
-        <span>AI-боты</span>
-      </div>
-      <div class="icon-badge b-auto">
-        <span class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 11-2.9 2.9l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.6V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 11-2.9-2.9l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.6-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 112.9-2.9l.1.1a1.7 1.7 0 001.9.3H9a1.7 1.7 0 001-1.6V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.6 1.7 1.7 0 001.9-.3l.1-.1a2 2 0 112.9 2.9l-.1.1a1.7 1.7 0 00-.3 1.9V9a1.7 1.7 0 001.6 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.6 1z"/></svg></span>
-        <span>Автоматизация</span>
-      </div>
-      <div class="icon-badge b-audit">
-        <span class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
-        <span>Аудит процессов</span>
-      </div>
-
-      <div class="float-tag">&gt; результат<br>успех</div>
-
-      <img class="hero-figure" src="lt3-P.png" alt="LazyWorkaholic">
     </div>
   </div>
 </section>
 
+<!-- About -->
+<section id="about">
+  <div class="container text-center">
+    <span class="section-label">Обо мне</span>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-image" style="overflow:hidden;">
+          <img src="about-photo.jpg" alt="Алена Лазарева" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;position:relative;z-index:1;">
+        </div>
+      </div>
+      <div class="about-text reveal reveal-delay-2">
+        <h3 style="color:#F0EDE8;">Ваш проводник в мире чувств и отношений</h3>
+        <p>
+          Меня зовут Алена Лазарева. Я практикующий психолог в интегративном подходе.
+        </p>
+        <p>
+          В работе опираюсь на бережное отношение к вашим чувствам, уважение к вашему темпу и глубокую веру в вашу способность меняться. Со мной безопасно исследовать себя, даже если вы пока не знаете, с чего начать.
+        </p>
+        <p>
+          Я веду группы и мастер-классы, организую профессиональные мероприятия для психологов и помогающих специалистов, создавая пространство для раскрытия ресурсов и внутренней опоры.
+        </p>
+        <p>
+          Как супервизор я сопровождаю начинающих терапевтов, развивая их наблюдательность, точность контакта и умение работать с клиентскими процессами глубоко и осознанно.
+        </p>
+        <p>
+          Если вы готовы сделать первый шаг к пониманию себя и устойчивым изменениям - давайте начнём вместе. Напишите мне, и мы найдём путь, который подходит именно вам.
+        </p>
+        <p>
+          Принимаю очно и онлайн людей от 16 лет и работаю с парами. Консультирую на русском языке.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Specializations -->
+<section id="specializations">
+  <div class="container">
+    <div style="text-align:center;"><span class="section-label">С чем работаю</span></div>
+    <div class="specs-layout reveal">
+      <div class="specs-text">
+        <div class="divider" style="margin:0 0 24px;"></div>
+        <h2 class="section-title" style="color:#F0EDE8;font-family:'Playfair Display', serif; font-size:1.8rem;">Помогаю в ситуациях,<br>когда важно разобраться в себе</h2>
+        <p class="section-desc">Каждый запрос уникален. <br>Ниже - темы, с которыми <br>я чаще всего работаю. <br>Если вы не нашли свою <br>тему - напишите, обсудим.</p>
+      </div>
+      <div class="specs-image">
+        <img src="pic/zapros/krug2.png" alt="" class="specs-image-outer">
+        <div class="specs-image-inner">
+          <img src="pic/zapros/zapros.png" alt="">
+          <span style="color:#e7c18c;">Вы<br>и ваш запрос</span>
+        </div>
+        <div class="specs-orbit-item right" style="--angle:40deg;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/trevoga.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:contain;margin-left:-3px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Тревога и стресс</span>
+            <small>Постоянное напряжение,<br>тревожные мысли,<br>панические атаки.</small>
+          </div>
+        </div>
+        <div class="specs-orbit-item right" style="--angle:90deg;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/otnoshenia.png" alt="" style="width:28px;height:28px;object-fit:contain;margin-left:-10px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Отношения</span>
+            <small>Сложности в паре, конфликты,<br>непонимание, повторяющиеся<br>сценарии</small>
+          </div>
+        </div>
+        <div class="specs-orbit-item right" style="--angle:150deg;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/poteri.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:contain;margin-left:-5px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Потери и перемены</span>
+            <small>Расставания, утраты, переезды,<br>кризисы, поиск смысла<br>и новых опор</small>
+          </div>
+        </div>
+        <div class="specs-orbit-item left" style="--angle:210deg; margin-left:-148px;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/granizi.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:contain;margin-top:-5px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Границы и личные<br>отношения</span>
+            <small>Трудности говорить «нет»,<br>чувство вины, зависимость<br>от чужого мнения</small>
+          </div>
+        </div>
+        <div class="specs-orbit-item left" style="--angle:270deg; margin-left:-148px;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/vigoranie.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:contain;margin-top:-10px;margin-left:-10px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Выгорание</span>
+            <small>Усталость, потеря сил<br>и интереса, ощущение,<br>что «ничего не радует»</small>
+          </div>
+        </div>
+        <div class="specs-orbit-item left" style="--angle:325deg; margin-left:-158px;">
+          <div style="width:68px;height:68px;border-radius:50%;background:url('pic/zapros/krug_mini.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/samoocenka.png" alt="" style="width:32px;height:32px;border-radius:50%;object-fit:contain;margin-left:-5px;">
+          </div>
+          <div class="specs-orbit-text">
+            <span>Самооценка<br>и уверенность</span>
+            <small>Чувство собственной<br>неценности; сомнения,<br>критика себя</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="specs-grid">
+      <div class="spec-card reveal reveal-delay-1">
+        <img src="pic/zapros/trevoga.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Тревога и стресс</h3>
+        <p>Постоянное напряжение, тревожные мысли, панические атаки.</p>
+      </div>
+      <div class="spec-card reveal reveal-delay-1">
+        <img src="pic/zapros/otnoshenia.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Отношения</h3>
+        <p>Сложности в паре, конфликты, непонимание, повторяющиеся сценарии.</p>
+      </div>
+      <div class="spec-card reveal reveal-delay-2">
+        <img src="pic/zapros/samoocenka.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Самооценка и уверенность</h3>
+        <p>Чувство собственной неценности, сомнения, критика себя.</p>
+      </div>
+      <div class="spec-card reveal reveal-delay-2">
+        <img src="pic/zapros/poteri.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Потери и перемены</h3>
+        <p>Расставания, утраты, переезды, кризисы, поиск смысла и новых опор.</p>
+      </div>
+      <div class="spec-card reveal reveal-delay-3">
+        <img src="pic/zapros/vigoranie.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Выгорание</h3>
+        <p>Усталость, потеря сил и интереса, ощущение, что «ничего не радует».</p>
+      </div>
+      <div class="spec-card reveal reveal-delay-3">
+        <img src="pic/zapros/granizi.png" alt="" style="width:40px;height:40px;border-radius:50%;margin-bottom:12px;">
+        <h3>Границы и личные отношения</h3>
+        <p>Трудности говорить «нет», чувство вины, зависимость от чужого мнения.</p>
+      </div>
+    </div>
+    <div class="specs-bottom-text">
+      <img src="pic/zapros/zametka.png" alt="" style="width:40px;height:40px;flex-shrink:0;">
+      <span>Работаю бережно и конфиденциально. В безопасном пространстве вы сможете быть собой и двигаться в своём темпе.</span>
+    </div>
+  </div>
+</section>
+<section id="methods">
+  <div class="container text-center">
+    <div class="reveal">
+      <span class="section-label">Методы работы</span>
+      <div class="divider"></div>
+    </div>
+    <div class="methods-layout reveal">
+      <div class="methods-left">
+        <h3>Интегративный<br>подход</h3>
+        <p>Я использую проверенные методы психотерапии<br> и подбираю подходящие именно вам.<br> В центре всегда - ваши чувства, ценности и опыт.</p>
+      </div>
+      <div class="methods-list">
+        <div class="method-block reveal reveal-delay-1">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/metods/geshtalt.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;margin-top:-10px;">
+          </div>
+          <div>
+            <h3>Гештальт-терапия</h3>
+            <p>Помогает лучше понимать себя, замечать свои чувства и потребности, преодолевать внутренние конфликты и находить опору в настоящем.</p>
+          </div>
+        </div>
+        <div class="method-block reveal reveal-delay-1">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/metods/kpt.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;margin-left:10px;">
+          </div>
+          <div>
+            <h3>Когнитивно-поведенческая терапия (КПТ)</h3>
+            <p>Помогает распознавать негативные мысли и привычные модели поведения, менять их на более поддерживающие и справляться с жизненными трудностями.</p>
+          </div>
+        </div>
+        <div class="method-block reveal reveal-delay-2">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/metods/telesno.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;margin-left:10px;">
+          </div>
+          <div>
+            <h3>Телесно-ориентированная терапия</h3>
+            <p>Помогает снять внутреннее напряжение, восстановить контакт с телом, лучше понимать свои эмоции и чувствовать себя более устойчиво.</p>
+          </div>
+        </div>
+        <div class="method-block reveal reveal-delay-2">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/metods/golos.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;">
+          </div>
+          <div>
+            <h3>Голосовая терапия</h3>
+            <p>Помогает освободить естественное самовыражение, преодолеть внутренние ограничения, обрести уверенность и научиться звучать свободно.</p>
+          </div>
+        </div>
+        <div class="method-block reveal reveal-delay-3">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/metods/art.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;margin-left:10px;">
+          </div>
+          <div>
+            <h3>Арт-терапия</h3>
+            <p>Помогает выражать чувства через творчество, находить новые смыслы, проживать сложные переживания и лучше понимать себя.</p>
+          </div>
+        </div>
+        <div class="method-block reveal reveal-delay-3">
+          <div style="width:80px;height:80px;border-radius:50%;background:url('pic/metods/krug_m.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <img src="pic/zapros/granizi.png" alt="" style="width:50px;height:50px;border-radius:50%;object-fit:contain;margin-left:10px;margin-top:-15px;">
+          </div>
+          <div>
+            <h3>Семейная психология</h3>
+            <p>Помогает услышать друг друга, преодолеть кризисы, восстановить доверие и найти новые способы строить гармоничные отношения в семье.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="methods-quote reveal" style="margin-top:40px;text-align:center;">
+      <p class="methods-quote-text" style="display:inline-block;border:1px solid rgba(201,169,110,0.3);border-radius:var(--radius-sm);padding:14px 32px;color:#F0EDE8;font-size:0.95rem;backdrop-filter:blur(8px);background:var(--bg-card);">Каждый человек уникален, поэтому я гибко сочетаю методы, создавая индивидуальный путь к изменениям и внутренней гармонии.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
 <section id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">услуги</span>
-      <h2>Чем я могу помочь</h2>
-      <p class="section-head-p">Сайт, бот или автоматизация - в зависимости от того, что сейчас важнее для вашего бизнеса.</p>
+  <div class="container text-center">
+    <div class="reveal">
+      <span class="section-label">Услуги</span>
+      <div class="divider"></div>
+      <h2 class="section-title" style="color:#F0EDE8;font-size:1.8rem;">Стоимость консультаций</h2>
+      <p class="section-desc">Выберите удобный формат работы</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="mono">[ WEB ]</span>
-        <h3>Сайт под ключ</h3>
-        <p>Сайт, чтобы клиенты находили вас и доверяли с первого взгляда.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="title">Индивидуальная</div>
+        <div class="desc">Очная встреча в кабинете в СПб</div>
+        <div class="price">4 500 ₽</div>
+        <div class="duration">50 минут</div>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Записаться</a>
       </div>
-      <div class="service-card">
-        <span class="mono">[ BOT ]</span>
-        <h3>Боты-помощники</h3>
-        <p>Отвечают на вопросы клиентов, собирают заявки, ищут ответы в базе знаний компании. Работают 24/7 - экономят до 80% времени команды.</p>
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="badge">Популярное</div>
+        <div class="title">Индивидуальная онлайн</div>
+        <div class="desc">Видео-конференция в удобное время</div>
+        <div class="price">4 000 ₽</div>
+        <div class="duration">50 минут</div>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Записаться</a>
       </div>
-      <div class="service-card">
-        <span class="mono">[ AUTO ]</span>
-        <h3>Автоматизация бизнеса</h3>
-        <p>Соединяю сервисы между собой, чтобы рутинные действия - уведомления, сбор данных, отчёты - происходили сами.</p>
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="title">Парная</div>
+        <div class="desc">Для пар - очно или онлайн</div>
+        <div class="price">7 000 ₽</div>
+        <div class="duration">90 минут</div>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Записаться</a>
       </div>
-      <div class="service-card">
-        <span class="mono">[ AUDIT ]</span>
-        <h3>Аудит процессов</h3>
-        <p>Не уверены, что можно автоматизировать? Проведу аудит, найду узкие места и составлю roadmap внедрения AI.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="why">
-  <div class="wrap why-grid">
-    <div class="why-copy">
-      <span class="tag">почему я</span>
-      <h2 style="font-size:28px; margin-bottom:16px;">Почему со мной работают</h2>
-      <p>Автоматизация должна приносить измеримую пользу, а не просто выглядеть современно.</p>
-      <p>Поэтому каждый проект начинается с анализа процессов. Я ищу задачи, которые ежедневно отнимают время сотрудников, приводят к ошибкам или тормозят работу компании.</p>
-      <p>После этого разрабатываю решение: интеграции между сервисами, AI-ассистенты, Telegram-боты, автоматическую обработку документов, CRM и другие процессы.</p>
-      <p>Результат - меньше ручной работы, меньше ошибок и больше времени на развитие бизнеса.</p>
-    </div>
-    <div class="checklist">
-      <div class="checklist-head"><span>QA_CHECKLIST.md</span><span>3 / 4 passed</span></div>
-      <div class="cl-item done"><div class="cl-box"></div>Требования собраны<span class="cl-time">09:30</span></div>
-      <div class="cl-item done"><div class="cl-box"></div>Прототип согласован<span class="cl-time">10:15</span></div>
-      <div class="cl-item done"><div class="cl-box"></div>Разработка завершена<span class="cl-time">14:00</span></div>
-      <div class="cl-item"><div class="cl-box"></div>Тестирование сценариев<span class="cl-time">running…</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="process">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">процесс</span>
-      <h2>Пять шагов от идеи до готового решения</h2>
-      <p class="section-head-p">Работа над каждым проектом строится по понятному и прозрачному процессу.</p>
-    </div>
-    <div class="process">
-      <div class="proc-step"><span class="tc">01</span><h4>Заявка</h4><p>Обсуждение задачи, цели и сроков</p></div>
-      <div class="proc-step"><span class="tc">02</span><h4>Требования</h4><p>Утверждение конкретных, проверяемых критериев</p></div>
-      <div class="proc-step"><span class="tc">03</span><h4>Разработка</h4><p>Создание сайта, бота или интеграции. Показ прогресса по ходу работы при необходимости.</p></div>
-      <div class="proc-step"><span class="tc">04</span><h4>QA-тесты</h4><p>Проверка по сценариям из требований</p></div>
-      <div class="proc-step pass"><span class="tc">05 ✓</span><h4>Сдача</h4><p>Передача готового решения с последующей поддержкой при необходимости</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="cases">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">кейсы</span>
-      <h2>Что уже сделано</h2>
-      <p>Разверните карточку, чтобы увидеть цель, проблему, решение и результат.</p>
-    </div>
-
-    <div class="case open" id="case1">
-      <div class="case-head" onclick="toggleCase('case1')">
-        <div class="case-title">
-          <div>
-            <span class="case-id">CASE-01 · BOT</span>
-            <h3>Формы + Telegram-бот</h3>
-            <p class="case-sub">Уведомления о заявках без захода в Яндекс Формы</p>
-          </div>
-        </div>
-        <span class="chev mono">▾</span>
-      </div>
-      <div class="case-body">
-        <div class="case-body-in">
-          <div class="cbp">
-            <div class="blk"><span class="lbl">Цель</span><p>Удобный сбор заявок на мероприятие через анкету, с быстрым уведомлением организатора о новых ответах.</p></div>
-            <div class="blk"><span class="lbl">Решение</span><p>Интеграция форм с базой данных и Telegram-ботом: при заполнении анкеты организатору приходит сообщение с данными участника.</p></div>
-            <div class="blk"><span class="lbl">Проблема</span><p>Яндекс Формы не интегрированы с таблицами - заявки видны только внутри сервиса, без уведомлений о новых ответах.</p></div>
-            <div class="blk"><span class="lbl">Результат</span><p>Заявки обрабатываются мгновенно, все данные - в одном месте, общение с участником начинается сразу в Telegram.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case" id="case2">
-      <div class="case-head" onclick="toggleCase('case2')">
-        <div class="case-title">
-          <div>
-            <span class="case-id">CASE-02 · BOT</span>
-            <h3>Бот по базе знаний</h3>
-            <p class="case-sub">Ответы на вопросы по процессам компании одним запросом</p>
-          </div>
-        </div>
-        <span class="chev mono">▾</span>
-      </div>
-      <div class="case-body">
-        <div class="case-body-in">
-          <div class="cbp">
-            <div class="blk"><span class="lbl">Цель</span><p>Дать сотрудникам быстрый доступ к базе знаний по процессам компании без ручного поиска по ссылкам.</p></div>
-            <div class="blk"><span class="lbl">Решение</span><p>Бот-помощник, который ищет ответ в базе знаний по свободному вопросу и выдаёт его напрямую в чате.</p></div>
-            <div class="blk"><span class="lbl">Проблема</span><p>Ссылки на документы устаревают, сотрудники не помнят точных названий страниц - поиск ответа затягивается.</p></div>
-            <div class="blk"><span class="lbl">Результат</span><p>Ответы приходят за секунды, нагрузка на коллег и HR снизилась, онбординг новичков стал проще.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="case" id="case3">
-      <div class="case-head" onclick="toggleCase('case3')">
-        <div class="case-title">
-          <div>
-            <span class="case-id">CASE-03 · WEB</span>
-            <h3>Сайт для врача-специалиста</h3>
-            <p class="case-sub">Лендинг, которому доверяют с первого экрана</p>
-          </div>
-        </div>
-        <span class="chev mono">▾</span>
-      </div>
-      <div class="case-body">
-        <div class="case-body-in">
-          <div class="cbp">
-            <div class="blk"><span class="lbl">Цель</span><p>Сайт для практикующего врача, который вызывает доверие ещё до первого визита и явно показывает запись на приём.</p></div>
-            <div class="blk"><span class="lbl">Решение</span><p>Одностраничный сайт с акцентом на квалификацию врача, понятной структурой услуг и кликабельным номером телефона для мгновенного звонка.</p></div>
-            <div class="blk"><span class="lbl">Проблема</span><p>Не было сайта вообще - пациенты находили врача только по сарафанному радио, без возможности заранее узнать о специализации и опыте.</p></div>
-            <div class="blk"><span class="lbl">Результат</span><p>Пациенты сразу видят квалификацию и могут записаться в одно касание, доверие формируется ещё до звонка.</p></div>
-          </div>
-        </div>
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="title">Супервизия</div>
+        <div class="desc">Для психологов</div>
+        <div class="price">3 000 ₽</div>
+        <div class="duration">50 минут</div>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Записаться</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="tag">faq</span>
-      <h2>Частые вопросы</h2>
+<!-- Trainings -->
+<section id="trainings">
+  <div class="container text-center">
+    <div class="reveal">
+      <span class="section-label">Группы и тренинги</span>
+      <div class="divider"></div>
+      <h2 class="section-title" style="color:#F0EDE8;font-size:1.8rem;">Приходите в группу</h2>
+      <p class="section-desc">Групповая работа - мощный ресурс для изменений</p>
     </div>
-
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span>Нужно ли готовое ТЗ или разбираться в AI?</span><span class="chev mono">▾</span></div>
-      <div class="faq-a">Нет. Требования можно собрать вместе на старте - это часть работы, а не отдельная услуга.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span>Сколько времени занимает проект?</span><span class="chev mono">▾</span></div>
-      <div class="faq-a">Простой бот - 3-5 дней, сайт - 1-2 недели. Сроки зависят от сложности и скорости согласований с вашей стороны.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span>Что значит «под ключ»?</span><span class="chev mono">▾</span></div>
-      <div class="faq-a">Сбор требований, проектирование, разработка, QA-тестирование, запуск и обучение. Вы получаете готовый работающий продукт.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span>Работаете с правками и поддержкой после сдачи?</span><span class="chev mono">▾</span></div>
-      <div class="faq-a">Да. Возможны сопровождение, доработка функционала и развитие проекта.</div>
-    </div>
-    <div class="faq-item" onclick="toggleFaq(this)">
-      <div class="faq-q"><span>А если я не знаю, что именно мне нужно?</span><span class="chev mono">▾</span></div>
-      <div class="faq-a">Можно начать с аудита процессов. Посмотрим на вашу текущую рутину и найдем, что и как можно автоматизировать.</div>
+    <div class="carousel-container reveal">
+      <div class="carousel">
+        <button class="carousel-arrow carousel-arrow-left" aria-label="Предыдущая">‹</button>
+        <div class="carousel-viewport" id="carouselViewport">
+          <div class="carousel-track" id="carouselTrack">
+            <a href="https://www.b17.ru/trainings/tak_towe_mowno/" target="_blank" class="carousel-card">
+              <i class="emoji fas fa-users" style="color:var(--accent);"></i>
+              <h3>Так тоже можно!</h3>
+              <p>Онлайн-клуб для психологов. Супервизорский проект "Так тоже можно!" для начинающих психологов.</p>
+            </a>
+            <a href="https://www.b17.ru/training.php?id=117108" target="_blank" class="carousel-card">
+              <i class="emoji fas fa-fire" style="color:var(--accent);"></i>
+              <h3>Открывая свою Сексуальность</h3>
+              <p>Женская арт-терапевтическая встреча, где можно по новому посмотреть на свою сексуальность, почувствовать себя, отпустить стыд и найти больше свободы и внутренней опоры. Санкт-Петербург, 30 июля в 19:00, ст.м. Василеостровская.</p>
+            </a>
+            <a href="https://golos-fest.ru/" target="_blank" class="carousel-card">
+              <i class="emoji fas fa-music" style="color:var(--accent);"></i>
+              <h3>ГолосФест</h3>
+              <p>Ежегодный международный фестиваль голосовой терапии и практики 1-2 августа 2026 года в Санкт-Петербурге! Фестиваль, г. Санкт-Петербург. 1-2 августа, суббота-воскресенье.</p>
+            </a>
+            <a href="https://www.b17.ru/training.php?id=114676" target="_blank" class="carousel-card">
+              <i class="emoji fas fa-children" style="color:var(--accent);"></i>
+              <h3>Куклотерапия</h3>
+              <p>Делаем своими руками куклы (обереги, игровые, подарочные) в уютной атмосфере с психологом. Мастер-класс, г. Санкт-Петербург. По мере набора группы.</p>
+            </a>
+            <a href="https://www.b17.ru/training.php?id=117375" target="_blank" class="carousel-card">
+              <i class="emoji fas fa-tree" style="color:var(--accent);"></i>
+              <h3>Право на злость. Как начать жить</h3>
+              <p>Двухдневный выезд на природу, посвященный исследованию своей злости и агрессии. Место для отдыха, перезагрузки и нового опыта. 21-23 августа 2026. Бухта Моторное, Ладожское озеро, сосновый бор.</p>
+            </a>
+          </div>
+        </div>
+        <button class="carousel-arrow carousel-arrow-right" aria-label="Следующая">›</button>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
-  <div class="wrap">
-    <h2>Готовы обсудить проект?</h2>
-    <p>Опишите задачу - ответ в течение дня</p>
-    <div class="contact-btns">
-      <a href="https://t.me/lazyworkaholic" target="_blank" class="btn btn-primary">Написать в Telegram</a>
+<!-- Education -->
+<section id="education">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Образование</span>
+      <div class="divider"></div>
+      <h2 class="section-title" style="color:#F0EDE8;">Дипломы и сертификаты</h2>
+      <p class="section-desc" style="margin:0 auto;">Постоянно повышаю квалификацию, чтобы работать максимально эффективно</p>
+    </div>
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <div class="year">2026</div>
+        <div class="info">
+          <h3>Теория и практика гештальт-терапии</h3>
+          <p>ОПП «Гештальт-подход» (МГИ) - 1130 часов</p>
+        </div>
+      </div>
+      <div class="edu-item reveal reveal-delay-1">
+        <div class="year">2026</div>
+        <div class="info">
+          <h3>Телесно-ориентированная терапия в гештальт-подходе</h3>
+          <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+        </div>
+      </div>
+      <div class="edu-item reveal reveal-delay-1">
+        <div class="year">2024</div>
+        <div class="info">
+          <h3>Когнитивно-поведенческая психотерапия</h3>
+          <p>Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского - 252 часа</p>
+        </div>
+      </div>
+      <div class="edu-item reveal reveal-delay-2">
+        <div class="year">2024</div>
+        <div class="info">
+          <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
+          <p>Институт практической психологии «Иматон» - 184 часа</p>
+        </div>
+      </div>
+      <div class="edu-extra" id="eduExtra" style="display:none;">
+        <div class="edu-item reveal reveal-delay-2">
+          <div class="year">2021</div>
+          <div class="info">
+            <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
+            <p>Институт практической психологии «Иматон» - 60 часов</p>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-3">
+          <div class="year">2021</div>
+          <div class="info">
+            <h3>Телесность и работа с телесными нарушениями (психосоматика)</h3>
+            <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-3">
+          <div class="year">2020</div>
+          <div class="info">
+            <h3>СПбГИПСР - Психологическое семейное консультирование и психокоррекция отношений</h3>
+            <p>504 часа</p>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-4">
+          <div class="year">2020</div>
+          <div class="info">
+            <h3>Арт-методы в работе с детьми в гештальт-подходе</h3>
+            <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+          </div>
+        </div>
+        <div class="edu-item reveal reveal-delay-4">
+          <div class="year">2020</div>
+          <div class="info">
+            <h3>Основы психопатологии для гештальт-терапевтов</h3>
+            <p>ОПП «Гештальт-подход» (МГИ) - 60 часов</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="#" id="eduToggle" style="display:inline-block;color:var(--accent);font-size:0.9rem;letter-spacing:0.5px;text-decoration:none;border-bottom:1px dashed var(--accent);padding-bottom:2px;transition:opacity 0.3s;">Полный список</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>LazyWorkaholic · AI-решения под ключ · сайты · боты · автоматизация</footer>
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Контакты</span>
+      <div class="divider"></div>
+      <h2 class="section-title" style="color:#F0EDE8;">Давайте знакомиться</h2>
+      <p class="section-desc">Запишитесь на консультацию или задайте любой вопрос</p>
+    </div>
+    <div class="contact-info reveal" style="max-width:500px;margin:0 auto;">
+        <h3 style="text-align:center;margin-bottom:32px;color:#F0EDE8;">Свяжитесь со мной</h3>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin:0 auto;max-width:280px;">
+        <div class="contact-item">
+          <div class="icon-box"><i class="fas fa-envelope" style="font-size:1.3rem;color:var(--accent);"></i></div>
+          <div class="detail" style="text-align:left;color:var(--text-primary);">
+            alapsy@mail.ru
+          </div>
+        </div>
+      </div>
+        <div class="contact-socials" style="justify-content:center;gap:16px;margin-top:28px;">
+          <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0088cc;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,136,204,0.15)';this.style.borderColor='#0088cc';this.style.boxShadow='0 0 30px rgba(0,136,204,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#25D366;font-size:1.6rem;position:relative;" onmouseover="this.style.background='rgba(37,211,102,0.15)';this.style.borderColor='#25D366';this.style.boxShadow='0 0 30px rgba(37,211,102,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-whatsapp"></i><span style="position:absolute;top:-2px;right:-2px;font-size:0.75rem;color:var(--accent);">*</span></a>
+          <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0077FF;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,119,255,0.15)';this.style.borderColor='#0077FF';this.style.boxShadow='0 0 30px rgba(0,119,255,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-vk"></i></a>
+          <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;" onmouseover="this.style.background='rgba(201,169,110,0.15)';this.style.borderColor='var(--accent)';this.style.boxShadow='0 0 30px var(--accent-glow)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><img src="MAX.svg" alt="Max" width="28" height="28" style="filter:brightness(1.3);"></a>
+        </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-secondary);text-align:center;margin-top:12px;line-height:1.5;max-width:360px;margin-left:auto;margin-right:auto;"><span style="color:var(--accent);">*</span>WhatsApp - продукт компании Meta, которая признана экстремистской организацией и запрещена в РФ</p>
+      </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>© 2026 Алена Лазарева - Практикующий психолог, Санкт-Петербург</p>
+    <p style="margin-top:8px;">
+      <a href="https://www.b17.ru/sheiladi/" target="_blank">Профиль на b17.ru</a> · <a href="#" target="_blank">Политика конфиденциальности</a>
+    </p>
+    <div style="text-align:center;margin-top:16px;font-size:0.75rem;">
+      <span style="font-size:0.75rem;color:var(--text-secondary);">Разработка сайта: <a href="https://t.me/kotirakas" target="_blank" style="color:var(--text-secondary);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">LazyWorkaholic</a></span>
+    </div>
+  </div>
+</footer>
 
 <script>
-function toggleCase(id){
-  document.getElementById(id).classList.toggle('open');
-}
-function toggleFaq(el){
-  el.classList.toggle('open');
-}
+  // Mobile nav
+  document.getElementById('navToggle').addEventListener('click', function() {
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Edu toggle
+  document.getElementById('eduToggle').addEventListener('click', function(e) {
+    e.preventDefault();
+    var extra = document.getElementById('eduExtra');
+    var expanded = extra.style.display !== 'none';
+    extra.style.display = expanded ? 'none' : 'block';
+    this.textContent = expanded ? 'Полный список' : 'Краткий список';
+    if (!expanded) {
+      extra.querySelectorAll('.reveal').forEach(function(el) {
+        el.classList.add('visible');
+      });
+    }
+  });
+
+  // Carousel
+  (function() {
+    var track = document.getElementById('carouselTrack');
+    var viewport = document.getElementById('carouselViewport');
+    if (!track || !viewport) return;
+
+    var realCards = track.querySelectorAll('.carousel-card');
+    var len = realCards.length;
+    if (!len) return;
+
+    var gap = 24;
+    var cardWidth = 0;
+
+    // Clones: two on each side so neighbors match during snap
+    track.insertBefore(realCards[len - 2].cloneNode(true), realCards[0]);
+    track.insertBefore(realCards[len - 1].cloneNode(true), realCards[0]);
+    track.appendChild(realCards[0].cloneNode(true));
+    track.appendChild(realCards[1].cloneNode(true));
+
+    var allCards = track.querySelectorAll('.carousel-card');
+    var total = allCards.length;
+
+    var curReal = 1;
+    var curTrack = 3;
+    var running = false;
+
+    function realFromTrack(ti) {
+      if (ti === 0) return len - 2;
+      if (ti === 1) return len - 1;
+      if (ti === total - 2) return 0;
+      if (ti === total - 1) return 1;
+      return ti - 2;
+    }
+
+    function measure() { if (allCards.length) cardWidth = allCards[0].offsetWidth; }
+
+    function offsetFor(ti) {
+      return viewport.clientWidth / 2 - cardWidth / 2 - ti * (cardWidth + gap);
+    }
+
+    function apply(ti, instant) {
+      track.style.transition = instant ? 'none' : 'transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94)';
+      track.style.transform = 'translateX(' + offsetFor(ti) + 'px)';
+      for (var i = 0; i < total; i++) {
+        allCards[i].classList.toggle('active', i === ti);
+      }
+    }
+
+    function snapTo(ti) {
+      for (var i = 0; i < total; i++) allCards[i].style.transition = 'none';
+      curTrack = ti;
+      curReal = realFromTrack(ti);
+      apply(ti, true);
+      requestAnimationFrame(function() {
+        for (var i = 0; i < total; i++) allCards[i].style.transition = '';
+      });
+    }
+
+    function animateTo(fromTi, toTi, callback) {
+      var start = performance.now();
+      var fromOff = offsetFor(fromTi);
+      var toOff = offsetFor(toTi);
+      var dur = 500;
+      var raf;
+
+      function frame(now) {
+        var t = Math.min((now - start) / dur, 1);
+        var eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        var current = fromOff + (toOff - fromOff) * eased;
+
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(' + current + 'px)';
+
+        if (t < 1) {
+          raf = requestAnimationFrame(frame);
+        } else {
+          running = false;
+          curTrack = toTi;
+          curReal = realFromTrack(toTi);
+
+          var snapMap = {};
+          snapMap[0] = len;
+          snapMap[1] = len + 1;
+          snapMap[total - 2] = 2;
+          snapMap[total - 1] = 3;
+
+          if (toTi in snapMap) snapTo(snapMap[toTi]);
+          else {
+            for (var i = 0; i < total; i++) allCards[i].style.transition = 'none';
+            apply(toTi, true);
+            requestAnimationFrame(function() {
+              for (var i = 0; i < total; i++) allCards[i].style.transition = '';
+            });
+          }
+
+          if (callback) callback();
+        }
+      }
+      raf = requestAnimationFrame(frame);
+    }
+
+    function updateActive(ti) {
+      for (var i = 0; i < total; i++) {
+        allCards[i].classList.toggle('active', i === ti);
+      }
+    }
+
+    function next() {
+      if (running) return;
+      var nextTi = curTrack + 1;
+      if (nextTi >= total) nextTi = 2;
+      running = true;
+      updateActive(nextTi);
+      animateTo(curTrack, nextTi);
+    }
+
+    function prev() {
+      if (running) return;
+      var prevTi = curTrack - 1;
+      if (prevTi < 0) prevTi = len + 1;
+      running = true;
+      updateActive(prevTi);
+      animateTo(curTrack, prevTi);
+    }
+
+    // Card clicks via delegation
+    track.addEventListener('click', function(e) {
+      var card = e.target.closest('.carousel-card');
+      if (!card) return;
+      var idx = Array.from(allCards).indexOf(card);
+      var targetReal = realFromTrack(idx);
+      if (targetReal !== curReal) {
+        e.preventDefault();
+        if (running) return;
+        var diff = (targetReal - curReal + len) % len;
+        var shortest = diff <= Math.floor(len / 2) ? diff : diff - len;
+        var targetTi = curTrack + shortest;
+        if (targetTi < 0 || targetTi >= total) return;
+        running = true;
+        updateActive(targetTi);
+        animateTo(curTrack, targetTi);
+      }
+    });
+
+    // Arrows
+    var leftArrow = document.querySelector('.carousel-arrow-left');
+    var rightArrow = document.querySelector('.carousel-arrow-right');
+    if (leftArrow) leftArrow.addEventListener('click', prev);
+    if (rightArrow) rightArrow.addEventListener('click', next);
+
+    // Keyboard
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+      else if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+    });
+
+    // Touch
+    var startX = 0;
+    viewport.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; }, { passive: true });
+    viewport.addEventListener('touchend', function(e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { if (diff > 0) next(); else prev(); }
+    }, { passive: true });
+
+    // Init
+    measure();
+    snapTo(3);
+    window.addEventListener('resize', function() { measure(); apply(curTrack, true); });
+  })();
 </script>
 
+<!-- Modal -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h3>Свяжитесь со мной</h3>
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin:0 auto;max-width:280px;">
+      <div class="contact-item">
+        <div class="icon-box"><i class="fas fa-envelope" style="font-size:1.3rem;color:var(--accent);"></i></div>
+        <div class="detail" style="text-align:left;color:var(--text-primary);">
+          alapsy@mail.ru
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;gap:16px;margin-top:28px;">
+      <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0088cc;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,136,204,0.15)';this.style.borderColor='#0088cc'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#25D366;font-size:1.6rem;position:relative;" onmouseover="this.style.background='rgba(37,211,102,0.15)';this.style.borderColor='#25D366'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-whatsapp"></i><span style="position:absolute;top:-2px;right:-2px;font-size:0.75rem;color:var(--accent);">*</span></a>
+      <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0077FF;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,119,255,0.15)';this.style.borderColor='#0077FF'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-vk"></i></a>
+      <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;" onmouseover="this.style.background='rgba(201,169,110,0.15)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='';this.style.borderColor=''"><img src="MAX.svg" alt="Max" width="28" height="28" style="filter:brightness(1.3);"></a>
+    </div>
+    <p style="font-size:0.75rem;color:var(--text-secondary);text-align:center;margin-top:16px;line-height:1.5;max-width:360px;margin-left:auto;margin-right:auto;"><span style="color:var(--accent);">*</span>WhatsApp - продукт компании Meta, которая признана экстремистской организацией и запрещена в РФ</p>
+      </div>
+
+<script>
+  (function() {
+    var modal = document.getElementById('contactModal');
+    var openBtn = document.getElementById('heroBookBtn');
+    var navBtn = document.getElementById('navBookBtn');
+    var closeBtn = document.getElementById('modalClose');
+
+    function openModal(e) {
+      e.preventDefault();
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    openBtn.addEventListener('click', openModal);
+    navBtn.addEventListener('click', openModal);
+
+    closeBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  })();
+</script>
 </body>
 </html>
