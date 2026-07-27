@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://alenalazareva.netlify.app">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,6 +32,7 @@
       --accent-glow: rgba(201,169,110,0.25);
       --accent-light: rgba(201,169,110,0.1);
       --accent-gradient: linear-gradient(135deg, #C9A96E, #D4B87A, #C9A96E);
+      --heading-color: #c2854d;
       --radius: 20px;
       --radius-sm: 12px;
       --transition: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
@@ -154,20 +155,6 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
       align-items: center;
     }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 10px;
-      background: var(--bg-card); backdrop-filter: blur(12px);
-      border: 1px solid var(--border-card);
-      padding: 8px 18px 8px 8px; border-radius: 60px;
-      font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 28px;
-    }
-    .hero-badge .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: #4ADE80; display: inline-block;
-      box-shadow: 0 0 12px rgba(74,222,128,0.4);
-      animation: pulseDot 2s ease-in-out infinite;
-    }
-    @keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:0.4} }
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 4rem; font-weight: 600; line-height: 1.08;
@@ -179,18 +166,19 @@
       margin-bottom: 40px; line-height: 1.8; max-width: 480px;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .hero-stats {
-      display: flex; gap: 32px; margin-top: 40px;
+    .hero-badges {
+      display: flex; gap: 20px; margin-top: 32px;
     }
-    .hero-stat {
-      text-align: left;
+    .hero-badge-card {
+      background: rgba(255,255,255,0.04); backdrop-filter: blur(12px);
+      border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+      padding: 14px 20px; max-width: 340px;
     }
-    .hero-stat .num {
-      font-size: 1.6rem; font-weight: 700; color: var(--accent);
-      letter-spacing: -0.02em;
+    .hero-badge-title {
+      display: block; font-size: 0.82rem; font-weight: 600; color: #F0EDE8; line-height: 1.35; margin-bottom: 4px;
     }
-    .hero-stat .lbl {
-      font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px;
+    .hero-badge-sub {
+      display: block; font-size: 0.78rem; color: #C9A96E;
     }
 
     /* About */
@@ -202,7 +190,7 @@
       position: relative;
     }
     .about-image {
-      width: 100%; aspect-ratio: 1;
+      width: 100%; aspect-ratio: 3/4;
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(201,169,110,0.08), rgba(201,169,110,0.02));
       display: flex; align-items: center; justify-content: center;
@@ -216,43 +204,15 @@
       animation: conicSpin 12s linear infinite;
     }
     @keyframes conicSpin { to { transform: rotate(360deg); } }
-    .about-image .initials {
-      font-family: 'Playfair Display', serif;
-      font-size: 5rem; letter-spacing: 0.08em;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      position: relative; z-index: 1;
-    }
     .about-text h3 {
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem; margin-bottom: 20px; line-height: 1.3;
+      text-align: left;
     }
     .about-text p {
       color: var(--text-secondary); margin-bottom: 18px; font-size: 0.95rem;
+      text-align: left;
     }
-
-    /* Stats row */
-    .stats-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-      margin-top: 36px;
-    }
-    .stat-box {
-      background: var(--bg-card); border: 1px solid var(--border-card);
-      padding: 22px; border-radius: var(--radius-sm);
-      text-align: center; backdrop-filter: blur(8px);
-      transition: all var(--transition);
-    }
-    .stat-box:hover {
-      background: var(--bg-card-hover);
-      transform: translateY(-4px);
-      border-color: rgba(201,169,110,0.15);
-    }
-    .stat-box .num {
-      font-size: 1.8rem; font-weight: 700;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .stat-box .lbl { font-size: 0.78rem; color: var(--text-secondary); margin-top: 4px; }
 
     /* Specializations / Grid cards */
     .specs-grid {
@@ -300,7 +260,7 @@
     }
     .methods-left h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.8rem; margin-bottom: 16px; line-height: 1.3; color: #F0EDE8;
+      font-size: 1.8rem; margin-bottom: 16px; line-height: 1.3;
     }
     .methods-left p {
       font-size: 0.92rem; color: #F0EDE8; line-height: 1.7;
@@ -321,18 +281,22 @@
     #specializations .specs-bottom-text { color: #F0EDE8 !important; }
     #specializations .specs-orbit-text small { color: #e7c18c !important; }
     #specializations .specs-orbit-text span { color: #F0EDE8; }
-    #specializations .spec-card h3 { color: #F0EDE8 !important; }
     #specializations .spec-card p { color: #e7c18c !important; }
 
-    h1, h2, h3, h4 { color: #c2854d; font-family: 'Cormorant Garamond', serif; }
-    .section-desc, .method-block p, .pricing-card .desc, .edu-item .info p, .testimonial-card .text, .stat-box .lbl, .hero-stat .lbl, .about-text p, .contact-item .detail, .contact-info > p, .carousel-card p { color: #e7c18c !important; }
+    h1, h2, h3, h4 { color: var(--heading-color); font-family: 'Playfair Display', serif; }
+
+    #about, #specializations, #methods, #pricing, #trainings, #education, #contact {
+      --heading-color: #F0EDE8;
+    }
+
+    .section-desc, .method-block p, .pricing-card .desc, .edu-item .info p, .about-text p, .contact-item .detail, .carousel-card p { color: #e7c18c !important; }
     .method-block {
       padding: 20px 0; border-bottom: 1px solid rgba(201,169,110,0.3);
       display: flex; align-items: flex-start; gap: 16px;
     }
     .method-block:last-child { border-bottom: none; }
     .method-block h3 {
-      font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; color: #F0EDE8;
+      font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;
     }
     .method-block p {
       font-size: 0.85rem; color: #F0EDE8; line-height: 1.7;
@@ -381,20 +345,57 @@
 
     /* Education timeline */
     .edu-list { margin-top: 48px; display: flex; flex-direction: column; gap: 14px; }
+    .edu-layout {
+      display: flex; gap: 40px; align-items: flex-start; margin-top: 48px;
+    }
+    .edu-photo {
+      flex: 0 0 300px; position: relative; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border-card);
+    }
+    .edu-photo img {
+      width: 100%; height: 420px; object-fit: cover; display: block;
+      border-radius: inherit;
+    }
+    .edu-list { flex: 1; }
+    .edu-year-group {
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .edu-year-group:hover { border-color: rgba(201,169,110,0.25); }
+    .edu-year-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 28px; cursor: pointer;
+      background: var(--bg-card); user-select: none;
+      transition: background var(--transition);
+    }
+    .edu-year-header:hover { background: var(--bg-card-hover); }
+    .edu-year-header span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.3rem; color: var(--accent);
+    }
+    .edu-arrow {
+      font-size: 0.9rem; color: var(--accent);
+      transition: transform 0.3s ease;
+    }
+    .edu-year-group.open .edu-arrow { transform: rotate(180deg); }
+    .edu-year-items {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .edu-year-group.open .edu-year-items { max-height: 600px; }
     .edu-item {
-      background: var(--bg-card); border: 1px solid var(--border-card);
-      border-radius: var(--radius-sm); padding: 24px 28px;
-      display: flex; gap: 24px; align-items: flex-start;
-      transition: all var(--transition);
+      background: var(--bg-secondary); border: none;
+      border-top: 1px solid var(--border-card);
+      border-radius: 0; padding: 20px 28px 20px 56px;
+      display: flex; gap: 16px; align-items: flex-start;
+      transition: background var(--transition);
     }
     .edu-item:hover {
-      background: var(--bg-card-hover);
-      transform: translateX(6px);
-      border-color: rgba(201,169,110,0.12);
-    }
-    .edu-item .year {
-      font-weight: 700; color: var(--accent);
-      white-space: nowrap; min-width: 56px; font-size: 1rem;
+      background: rgba(201,169,110,0.04);
+      transform: none;
     }
     .edu-item .info h4 { font-size: 1rem; margin-bottom: 4px; font-weight: 500; }
     .edu-item .info p { font-size: 0.82rem; color: var(--text-secondary); }
@@ -442,9 +443,8 @@
       transform: scale(0.92);
     }
     .carousel-card .emoji { font-size: 1.6rem; margin-bottom: 10px; display: block; }
-    .carousel-card h4 { font-size: 1rem; margin-bottom: 6px; color: #F0EDE8 !important; }
-    .carousel-card h3 { font-size: 1rem; margin-bottom: 6px; color: #F0EDE8 !important; }
-    .edu-item .info h3 { color: #F0EDE8 !important; }
+    .carousel-card h4 { font-size: 1rem; margin-bottom: 6px; }
+    .carousel-card h3 { font-size: 1rem; margin-bottom: 6px; }
     .carousel-card p { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6; }
     .carousel-arrow {
       flex-shrink: 0;
@@ -473,50 +473,7 @@
       transform: scale(0.92);
     }
 
-    /* Testimonials */
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px; margin-top: 48px;
-    }
-    .testimonial-card {
-      background: var(--bg-card); border: 1px solid var(--border-card);
-      border-radius: var(--radius); padding: 32px 28px;
-      backdrop-filter: blur(8px);
-      transition: all var(--transition);
-      position: relative;
-    }
-    .testimonial-card:hover {
-      background: var(--bg-card-hover);
-      transform: translateY(-4px);
-      border-color: rgba(201,169,110,0.12);
-    }
-    .testimonial-card::before {
-      content: '\201C'; font-family: 'Playfair Display', serif;
-      font-size: 4rem; 
-      background: var(--accent-gradient);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      position: absolute; top: 12px; left: 24px; line-height: 1; opacity: 0.4;
-    }
-    .testimonial-card .text {
-      font-size: 0.92rem; color: var(--text-secondary);
-      margin-bottom: 16px; font-style: italic; line-height: 1.7;
-      padding-top: 24px;
-    }
-    .testimonial-card .author {
-      font-weight: 600; font-size: 0.85rem; color: var(--accent);
-    }
-    .testimonial-card .source { font-size: 0.72rem; color: var(--text-secondary); }
-
     /* Contact */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-      align-items: start; margin-top: 48px;
-    }
-    .contact-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem; margin-bottom: 16px;
-    }
-    .contact-info > p { color: var(--text-secondary); margin-bottom: 28px; }
     .contact-item {
       display: flex; align-items: center; gap: 14px;
       margin-bottom: 18px;
@@ -546,31 +503,23 @@
       transform: translateY(-3px);
       box-shadow: 0 0 30px var(--accent-glow);
     }
-    .contact-form {
+    .social-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 14px;
       background: var(--bg-card); border: 1px solid var(--border-card);
-      border-radius: var(--radius); padding: 36px 32px;
-      backdrop-filter: blur(12px);
+      text-decoration: none; font-size: 1.6rem;
+      transition: all 0.4s ease;
     }
-    .contact-form h4 { font-size: 1.2rem; margin-bottom: 24px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group input,
-    .form-group textarea {
-      width: 100%; padding: 16px 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-sm);
-      font-family: inherit; font-size: 0.92rem; color: var(--text-primary);
-      transition: all 0.3s; outline: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--text-secondary); }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      background: rgba(201,169,110,0.04);
-      box-shadow: 0 0 20px var(--accent-glow);
-    }
-    .form-group textarea { height: 120px; resize: vertical; }
+    .social-icon i, .social-icon img { transition: inherit; }
+    .social-icon.telegram { color: #0088cc; }
+    .social-icon.telegram:hover { background: rgba(0,136,204,0.15); border-color: #0088cc; box-shadow: 0 0 30px rgba(0,136,204,0.3); }
+    .social-icon.whatsapp { color: #25D366; position: relative; }
+    .social-icon.whatsapp:hover { background: rgba(37,211,102,0.15); border-color: #25D366; box-shadow: 0 0 30px rgba(37,211,102,0.3); }
+    .social-icon.vk { color: #0077FF; }
+    .social-icon.vk:hover { background: rgba(0,119,255,0.15); border-color: #0077FF; box-shadow: 0 0 30px rgba(0,119,255,0.3); }
+    .social-icon.max:hover { background: rgba(201,169,110,0.15); border-color: var(--accent); box-shadow: 0 0 30px var(--accent-glow); }
+    .social-icon.max img { filter: brightness(1.3); }
+    .social-icon .wa-star { position: absolute; top: -2px; right: -2px; font-size: 0.75rem; color: var(--accent); }
 
     @media (min-width: 969px) {
       #specializations { background: url('fon_zapros.png') top right/cover no-repeat; }
@@ -617,10 +566,6 @@
       .specs-grid { display: none; }
       #methods { background: url('pic/metods/fon_metods.png') bottom left/cover no-repeat; }
       #trainings { background: url('pic/groups/fon_gr.png') center/cover no-repeat; }
-      #methods::before, #trainings::before {
-        content: ''; position: absolute; inset: 0;
-        background: rgba(20,17,13,0.72); backdrop-filter: blur(4px); z-index: 0;
-      }
       #methods > .container, #trainings > .container { position: relative; z-index: 1; }
     }
 
@@ -643,7 +588,6 @@
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* Glow line separator */
     .divider {
@@ -684,13 +628,11 @@
     @media (max-width: 968px) {
       .hero .container { grid-template-columns: 1fr; text-align: center; }
       .hero .container > div { max-width: none; margin: 0 auto; }
-      .hero-badge { justify-content: center; }
       .hero-sub { margin: 0 auto 40px; }
       .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; }
-      .hero-stat { text-align: center; }
+      .hero-badges { justify-content: center; flex-wrap: wrap; }
+      .hero-badge-card { max-width: none; }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .contact-grid { grid-template-columns: 1fr; }
       .section-title { font-size: 2.2rem; }
       .container { padding: 0 20px; }
     }
@@ -714,7 +656,7 @@
       .hero-sub { font-size: 0.95rem; }
       .hero-actions { flex-direction: column; align-items: center; }
       .hero-actions .btn { width: 100%; max-width: 320px; justify-content: center; }
-      .hero-stats { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .hero-badges { gap: 12px; flex-direction: column; align-items: center; }
       .section-label { font-size: 0.6rem; padding: 5px 14px; }
       .section-title { font-size: 1.7rem; }
       .section-desc { font-size: 0.9rem; }
@@ -725,21 +667,23 @@
       #specializations { background: url('pic/zapros/fon_zapros_mob.png') center/cover no-repeat; }
       .specs-bottom-text { max-width: none; margin-top: 24px; margin-left: auto; margin-right: auto; font-size: 0.85rem; justify-content: center; padding: 16px 20px; border: 1px solid var(--accent); border-radius: var(--radius); display: flex; align-items: center; gap: 12px; }
       .specs-grid { grid-template-columns: 1fr; gap: 14px; }
+      .spec-card:hover { transform: none; box-shadow: none; background: var(--bg-card); border-color: var(--border-card); }
+      .spec-card:hover::before { opacity: 0; }
       .spec-card { padding: 24px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
-      .spec-card img, .spec-card .icon { margin-bottom: 0; }
-      .spec-card h3 { margin-bottom: 0; }
+      .spec-card img, .spec-card .icon { margin-bottom: 0; flex-shrink: 0; }
+      .spec-card h3 { margin-bottom: 0; flex: 1 1 0; min-width: 0; }
       .spec-card p { flex-basis: 100%; }
       .methods-layout { grid-template-columns: 1fr; gap: 32px; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
       .pricing-card { padding: 28px 20px; }
       .pricing-card .price { font-size: 2rem; }
-      .edu-item { flex-direction: column; gap: 6px; padding: 20px; }
-      .edu-item .year { min-width: auto; font-size: 0.9rem; }
+      .edu-item { flex-direction: column; gap: 6px; padding: 16px 20px 16px 40px; }
       .edu-item .info p { font-size: 0.78rem; }
-      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-      .stat-box { padding: 14px 10px; }
-      .stat-box .num { font-size: 1.2rem; }
-      .stat-box .lbl { font-size: 0.7rem; }
+      .edu-year-header { padding: 14px 20px; }
+      .edu-year-header span:first-child { font-size: 1.1rem; }
+      .edu-layout { flex-direction: column; }
+      .edu-photo { flex: 0 0 auto; max-width: 300px; margin: 0 auto; }
+      .edu-photo img { height: 300px; }
       .carousel-card { flex: 0 0 260px; }
       .carousel { gap: 8px; }
       .carousel-arrow { width: 36px; height: 36px; font-size: 1.3rem; opacity: 0.6; }
@@ -762,11 +706,10 @@
     @media (max-width: 380px) {
       .container { padding: 0 16px; }
       .hero h1 { font-size: 2rem; }
-      .hero-badge { font-size: 0.7rem; padding: 6px 14px 6px 6px; }
-      .hero-stat .num { font-size: 1.3rem; }
-      .hero-stat .lbl { font-size: 0.72rem; }
+      .hero-badge-title { font-size: 0.78rem; }
+      .hero-badge-sub { font-size: 0.72rem; }
       .hero-actions .btn { padding: 14px 28px; font-size: 0.85rem; }
-      .section { padding: 56px 0; }
+      section { padding: 56px 0; }
       .section-title { font-size: 1.5rem; }
       .methods-layout { grid-template-columns: 1fr; gap: 20px; }
       .pricing-grid { gap: 16px; }
@@ -803,8 +746,8 @@
     <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">Обо мне</a></li>
+      <li><a href="#specializations">С чем работаю</a></li>
       <li><a href="#methods">Методы</a></li>
-      <li><a href="#services">Услуги</a></li>
       <li><a href="#contact">Контакты</a></li>
       <li><a href="#contact" class="nav-cta" id="navBookBtn">Записаться</a></li>
     </ul>
@@ -817,25 +760,21 @@
     <div class="reveal visible">
       <h1><span style="color:var(--text-primary);">Алена</span> <span class="accent">Лазарева</span></h1>
       <p class="hero-sub">
-        Помогаю найти внутреннюю опору. Работаю с тревогой, отношениями, 
+        Практикующий психолог. Помогаю найти внутреннюю опору. Работаю с тревогой, отношениями, 
         самооценкой и жизненными кризисами. Очно в Санкт-Петербурге и онлайн.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn btn-primary" id="heroBookBtn">Записаться на сессию</a>
         <a href="#about" class="btn btn-outline">Подробнее</a>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">6+</div>
-          <div class="lbl">лет практики</div>
+      <div class="hero-badges">
+        <div class="hero-badge-card">
+          <span class="hero-badge-title">Общество практикующих психологов "Гештальт-подход"</span>
+          <span class="hero-badge-sub">гештальт-терапевт</span>
         </div>
-        <div class="hero-stat">
-          <div class="num">500+</div>
-          <div class="lbl">консультаций</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">16+</div>
-          <div class="lbl">курсов</div>
+        <div class="hero-badge-card">
+          <span class="hero-badge-title">Ассоциация музыкальных психологов и психотерапевтов</span>
+          <span class="hero-badge-sub">куратор проектов секции голосовой терапии АМПП</span>
         </div>
       </div>
     </div>
@@ -849,11 +788,11 @@
     <div class="about-grid">
       <div class="about-visual reveal">
         <div class="about-image" style="overflow:hidden;">
-          <img src="about-photo.jpg" alt="Алена Лазарева" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;position:relative;z-index:1;">
+          <img src="hero.jpg" alt="Алена Лазарева" style="width:100%;height:100%;object-fit:contain;object-position:center;border-radius:inherit;position:relative;z-index:1;">
         </div>
       </div>
       <div class="about-text reveal reveal-delay-2">
-        <h3 style="color:#F0EDE8;">Ваш проводник в мире чувств и отношений</h3>
+        <h3>Ваш проводник в мире чувств и отношений</h3>
         <p>
           Меня зовут Алена Лазарева. Я практикующий психолог в интегративном подходе.
         </p>
@@ -884,7 +823,7 @@
     <div class="specs-layout reveal">
       <div class="specs-text">
         <div class="divider" style="margin:0 0 24px;"></div>
-        <h2 class="section-title" style="color:#F0EDE8;font-family:'Playfair Display', serif; font-size:1.8rem;">Помогаю в ситуациях,<br>когда важно разобраться в себе</h2>
+        <h2 class="section-title" style="font-size:1.8rem;">Помогаю в ситуациях,<br>когда важно разобраться в себе</h2>
         <p class="section-desc">Каждый запрос уникален. <br>Ниже - темы, с которыми <br>я чаще всего работаю. <br>Если вы не нашли свою <br>тему - напишите, обсудим.</p>
       </div>
       <div class="specs-image">
@@ -987,6 +926,112 @@
     </div>
   </div>
 </section>
+
+<!-- Education -->
+<section id="education">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <span class="section-label">Образование</span>
+      <div class="divider"></div>
+      <h2 class="section-title" style="font-size:1.8rem;">Дипломы и сертификаты</h2>
+      <p class="section-desc" style="margin:0 auto;">Постоянно повышаю квалификацию, чтобы работать максимально эффективно</p>
+    </div>
+    <div class="edu-layout reveal">
+      <div class="edu-photo">
+        <img src="photo.jpg" alt="Алена Лазарева">
+      </div>
+      <div class="edu-list">
+      <div class="edu-year-group">
+        <div class="edu-year-header" onclick="this.parentElement.classList.toggle('open')">
+          <span>2026</span>
+          <span class="edu-arrow">&#9662;</span>
+        </div>
+        <div class="edu-year-items">
+          <div class="edu-item reveal">
+            <div class="info">
+              <h3>Теория и практика гештальт-терапии</h3>
+              <p>ОПП «Гештальт-подход» (МГИ) - 1130 часов</p>
+            </div>
+          </div>
+          <div class="edu-item reveal reveal-delay-1">
+            <div class="info">
+              <h3>Телесно-ориентированная терапия в гештальт-подходе</h3>
+              <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-year-group">
+        <div class="edu-year-header" onclick="this.parentElement.classList.toggle('open')">
+          <span>2024</span>
+          <span class="edu-arrow">&#9662;</span>
+        </div>
+        <div class="edu-year-items">
+          <div class="edu-item reveal">
+            <div class="info">
+              <h3>Когнитивно-поведенческая психотерапия</h3>
+              <p>Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского - 252 часа</p>
+            </div>
+          </div>
+          <div class="edu-item reveal reveal-delay-1">
+            <div class="info">
+              <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
+              <p>Институт практической психологии «Иматон» - 184 часа</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-year-group">
+        <div class="edu-year-header" onclick="this.parentElement.classList.toggle('open')">
+          <span>2021</span>
+          <span class="edu-arrow">&#9662;</span>
+        </div>
+        <div class="edu-year-items">
+          <div class="edu-item reveal">
+            <div class="info">
+              <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
+              <p>Институт практической психологии «Иматон» - 60 часов</p>
+            </div>
+          </div>
+          <div class="edu-item reveal reveal-delay-1">
+            <div class="info">
+              <h3>Телесность и работа с телесными нарушениями (психосоматика)</h3>
+              <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="edu-year-group">
+        <div class="edu-year-header" onclick="this.parentElement.classList.toggle('open')">
+          <span>2020</span>
+          <span class="edu-arrow">&#9662;</span>
+        </div>
+        <div class="edu-year-items">
+          <div class="edu-item reveal">
+            <div class="info">
+              <h3>СПбГИПСР - Психологическое семейное консультирование и психокоррекция отношений</h3>
+              <p>504 часа</p>
+            </div>
+          </div>
+          <div class="edu-item reveal reveal-delay-1">
+            <div class="info">
+              <h3>Арт-методы в работе с детьми в гештальт-подходе</h3>
+              <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
+            </div>
+          </div>
+          <div class="edu-item reveal reveal-delay-2">
+            <div class="info">
+              <h3>Основы психопатологии для гештальт-терапевтов</h3>
+              <p>ОПП «Гештальт-подход» (МГИ) - 60 часов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methods -->
 <section id="methods">
   <div class="container text-center">
     <div class="reveal">
@@ -1067,7 +1112,7 @@
     <div class="reveal">
       <span class="section-label">Услуги</span>
       <div class="divider"></div>
-      <h2 class="section-title" style="color:#F0EDE8;font-size:1.8rem;">Стоимость консультаций</h2>
+      <h2 class="section-title" style="font-size:1.8rem;">Стоимость консультаций</h2>
       <p class="section-desc">Выберите удобный формат работы</p>
     </div>
     <div class="pricing-grid">
@@ -1110,12 +1155,12 @@
     <div class="reveal">
       <span class="section-label">Группы и тренинги</span>
       <div class="divider"></div>
-      <h2 class="section-title" style="color:#F0EDE8;font-size:1.8rem;">Приходите в группу</h2>
+      <h2 class="section-title" style="font-size:1.8rem;">Приходите в группу</h2>
       <p class="section-desc">Групповая работа - мощный ресурс для изменений</p>
     </div>
     <div class="carousel-container reveal">
       <div class="carousel">
-        <button class="carousel-arrow carousel-arrow-left" aria-label="Предыдущая">‹</button>
+        <button class="carousel-arrow carousel-arrow-left" aria-label="Предыдущая">&#8249;</button>
         <div class="carousel-viewport" id="carouselViewport">
           <div class="carousel-track" id="carouselTrack">
             <a href="https://www.b17.ru/trainings/tak_towe_mowno/" target="_blank" class="carousel-card">
@@ -1145,89 +1190,7 @@
             </a>
           </div>
         </div>
-        <button class="carousel-arrow carousel-arrow-right" aria-label="Следующая">›</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Education -->
-<section id="education">
-  <div class="container">
-    <div class="reveal" style="text-align:center;">
-      <span class="section-label">Образование</span>
-      <div class="divider"></div>
-      <h2 class="section-title" style="color:#F0EDE8;">Дипломы и сертификаты</h2>
-      <p class="section-desc" style="margin:0 auto;">Постоянно повышаю квалификацию, чтобы работать максимально эффективно</p>
-    </div>
-    <div class="edu-list">
-      <div class="edu-item reveal">
-        <div class="year">2026</div>
-        <div class="info">
-          <h3>Теория и практика гештальт-терапии</h3>
-          <p>ОПП «Гештальт-подход» (МГИ) - 1130 часов</p>
-        </div>
-      </div>
-      <div class="edu-item reveal reveal-delay-1">
-        <div class="year">2026</div>
-        <div class="info">
-          <h3>Телесно-ориентированная терапия в гештальт-подходе</h3>
-          <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
-        </div>
-      </div>
-      <div class="edu-item reveal reveal-delay-1">
-        <div class="year">2024</div>
-        <div class="info">
-          <h3>Когнитивно-поведенческая психотерапия</h3>
-          <p>Институт психотерапии и медицинской психологии им. Б.Д. Карвасарского - 252 часа</p>
-        </div>
-      </div>
-      <div class="edu-item reveal reveal-delay-2">
-        <div class="year">2024</div>
-        <div class="info">
-          <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
-          <p>Институт практической психологии «Иматон» - 184 часа</p>
-        </div>
-      </div>
-      <div class="edu-extra" id="eduExtra" style="display:none;">
-        <div class="edu-item reveal reveal-delay-2">
-          <div class="year">2021</div>
-          <div class="info">
-            <h3>Интегративная голосовая терапия в практике психологического консультирования</h3>
-            <p>Институт практической психологии «Иматон» - 60 часов</p>
-          </div>
-        </div>
-        <div class="edu-item reveal reveal-delay-3">
-          <div class="year">2021</div>
-          <div class="info">
-            <h3>Телесность и работа с телесными нарушениями (психосоматика)</h3>
-            <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
-          </div>
-        </div>
-        <div class="edu-item reveal reveal-delay-3">
-          <div class="year">2020</div>
-          <div class="info">
-            <h3>СПбГИПСР - Психологическое семейное консультирование и психокоррекция отношений</h3>
-            <p>504 часа</p>
-          </div>
-        </div>
-        <div class="edu-item reveal reveal-delay-4">
-          <div class="year">2020</div>
-          <div class="info">
-            <h3>Арт-методы в работе с детьми в гештальт-подходе</h3>
-            <p>ОПП «Гештальт-подход» (МГИ) - 180 часов</p>
-          </div>
-        </div>
-        <div class="edu-item reveal reveal-delay-4">
-          <div class="year">2020</div>
-          <div class="info">
-            <h3>Основы психопатологии для гештальт-терапевтов</h3>
-            <p>ОПП «Гештальт-подход» (МГИ) - 60 часов</p>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:36px;">
-        <a href="#" id="eduToggle" style="display:inline-block;color:var(--accent);font-size:0.9rem;letter-spacing:0.5px;text-decoration:none;border-bottom:1px dashed var(--accent);padding-bottom:2px;transition:opacity 0.3s;">Полный список</a>
+        <button class="carousel-arrow carousel-arrow-right" aria-label="Следующая">&#8250;</button>
       </div>
     </div>
   </div>
@@ -1239,11 +1202,10 @@
     <div class="text-center reveal">
       <span class="section-label">Контакты</span>
       <div class="divider"></div>
-      <h2 class="section-title" style="color:#F0EDE8;">Давайте знакомиться</h2>
+      <h2 class="section-title" style="font-size:1.8rem;">Свяжитесь со мной</h2>
       <p class="section-desc">Запишитесь на консультацию или задайте любой вопрос</p>
     </div>
     <div class="contact-info reveal" style="max-width:500px;margin:0 auto;">
-        <h3 style="text-align:center;margin-bottom:32px;color:#F0EDE8;">Свяжитесь со мной</h3>
         <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin:0 auto;max-width:280px;">
         <div class="contact-item">
           <div class="icon-box"><i class="fas fa-envelope" style="font-size:1.3rem;color:var(--accent);"></i></div>
@@ -1253,10 +1215,10 @@
         </div>
       </div>
         <div class="contact-socials" style="justify-content:center;gap:16px;margin-top:28px;">
-          <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0088cc;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,136,204,0.15)';this.style.borderColor='#0088cc';this.style.boxShadow='0 0 30px rgba(0,136,204,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-telegram-plane"></i></a>
-          <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#25D366;font-size:1.6rem;position:relative;" onmouseover="this.style.background='rgba(37,211,102,0.15)';this.style.borderColor='#25D366';this.style.boxShadow='0 0 30px rgba(37,211,102,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-whatsapp"></i><span style="position:absolute;top:-2px;right:-2px;font-size:0.75rem;color:var(--accent);">*</span></a>
-          <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0077FF;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,119,255,0.15)';this.style.borderColor='#0077FF';this.style.boxShadow='0 0 30px rgba(0,119,255,0.3)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><i class="fab fa-vk"></i></a>
-          <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;" onmouseover="this.style.background='rgba(201,169,110,0.15)';this.style.borderColor='var(--accent)';this.style.boxShadow='0 0 30px var(--accent-glow)'" onmouseout="this.style.background='';this.style.borderColor='';this.style.boxShadow=''"><img src="MAX.svg" alt="Max" width="28" height="28" style="filter:brightness(1.3);"></a>
+          <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i><span class="wa-star">*</span></a>
+          <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" class="social-icon vk"><i class="fab fa-vk"></i></a>
+          <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" class="social-icon max"><img src="MAX.svg" alt="Max" width="28" height="28"></a>
         </div>
         </div>
         <p style="font-size:0.75rem;color:var(--text-secondary);text-align:center;margin-top:12px;line-height:1.5;max-width:360px;margin-left:auto;margin-right:auto;"><span style="color:var(--accent);">*</span>WhatsApp - продукт компании Meta, которая признана экстремистской организацией и запрещена в РФ</p>
@@ -1296,19 +1258,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Edu toggle
-  document.getElementById('eduToggle').addEventListener('click', function(e) {
-    e.preventDefault();
-    var extra = document.getElementById('eduExtra');
-    var expanded = extra.style.display !== 'none';
-    extra.style.display = expanded ? 'none' : 'block';
-    this.textContent = expanded ? 'Полный список' : 'Краткий список';
-    if (!expanded) {
-      extra.querySelectorAll('.reveal').forEach(function(el) {
-        el.classList.add('visible');
-      });
-    }
-  });
 
   // Carousel
   (function() {
@@ -1495,10 +1444,10 @@
       </div>
     </div>
     <div style="display:flex;justify-content:center;gap:16px;margin-top:28px;">
-      <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0088cc;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,136,204,0.15)';this.style.borderColor='#0088cc'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-telegram-plane"></i></a>
-      <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#25D366;font-size:1.6rem;position:relative;" onmouseover="this.style.background='rgba(37,211,102,0.15)';this.style.borderColor='#25D366'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-whatsapp"></i><span style="position:absolute;top:-2px;right:-2px;font-size:0.75rem;color:var(--accent);">*</span></a>
-      <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;color:#0077FF;font-size:1.6rem;" onmouseover="this.style.background='rgba(0,119,255,0.15)';this.style.borderColor='#0077FF'" onmouseout="this.style.background='';this.style.borderColor=''"><i class="fab fa-vk"></i></a>
-      <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" style="display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1px solid var(--border-card);text-decoration:none;transition:all 0.4s ease;" onmouseover="this.style.background='rgba(201,169,110,0.15)';this.style.borderColor='var(--accent)'" onmouseout="this.style.background='';this.style.borderColor=''"><img src="MAX.svg" alt="Max" width="28" height="28" style="filter:brightness(1.3);"></a>
+      <a href="https://t.me/Sheiladeschain" target="_blank" title="Telegram" class="social-icon telegram"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://wa.me/message/HFYPA7MBRWETE1" target="_blank" title="WhatsApp" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i><span class="wa-star">*</span></a>
+      <a href="https://vk.com/sheiladeschain" target="_blank" title="VK" class="social-icon vk"><i class="fab fa-vk"></i></a>
+      <a href="https://max.ru/u/f9LHodD0cOIF121cHeDB9H46mUL3oWUtwGTx48QDD_83A79klEXK_hM23Lc" target="_blank" title="Max" class="social-icon max"><img src="MAX.svg" alt="Max" width="28" height="28"></a>
     </div>
     <p style="font-size:0.75rem;color:var(--text-secondary);text-align:center;margin-top:16px;line-height:1.5;max-width:360px;margin-left:auto;margin-right:auto;"><span style="color:var(--accent);">*</span>WhatsApp - продукт компании Meta, которая признана экстремистской организацией и запрещена в РФ</p>
       </div>
